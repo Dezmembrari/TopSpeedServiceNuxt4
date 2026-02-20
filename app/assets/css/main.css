@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  --font-sans: 'Public Sans', sans-serif;
+
+
+  /* --- Primary (Green) --- */
+  /* Target #256c17 is at 700 */
+  --color-green-50: #f2f9f0;
+  --color-green-100: #e1f2de;
+  --color-green-200: #c4e4be;
+  --color-green-300: #9acc93;
+  --color-green-400: #6cae62;
+  --color-green-500: #49913e;
+  --color-green-600: #36752d;
+  --color-green-700: #256c17; /* Your specific primary color */
+  --color-green-800: #234b1a;
+  --color-green-900: #1d3e18;
+  --color-green-950: #0d220b;
+
+  /* --- Tertiary (Blue) --- */
+  /* Target #00497e is at 700 */
+  --color-blue-50: #f0f7ff;
+  --color-blue-100: #e0effe;
+  --color-blue-200: #b9dffc;
+  --color-blue-300: #7cc2fa;
+  --color-blue-400: #36a2f6;
+  --color-blue-500: #0c83eb;
+  --color-blue-600: #0066c7;
+  --color-blue-700: #00497e; /* Your specific tertiary color */
+  --color-blue-800: #003d68;
+  --color-blue-900: #063251;
+  --color-blue-950: #042035;
+}
