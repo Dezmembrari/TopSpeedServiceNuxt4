@@ -1,0 +1,64 @@
+<!-- 1. The Lead Magnet: "Ghid Complet: Cum completezi Constatarea Amiabilă"
+
+    Why you need it: Immediately after a crash, people stand on the side of the road, hands shaking, Googling "cum se completeaza amiabila".
+
+    The Funnel Play: Create a dedicated page (/ghid-amiabila). Show a visual diagram of the form. Explain who checks box A and box B.
+
+    The CTA: At the bottom of this helpful guide, put: "Ai completat amiabila? Perfect. Vino cu ea la noi, iar de aici preluăm noi absolut toată birocrația. Plus, pleci cu mașină la schimb." You catch the lead at minute zero of the accident. -->
+
+<!-- 2. Dedicated Page: Mașină la Schimb (/masina-la-schimb)
+
+    Why you need it: A huge portion of drivers delay repairs because they need their car for work or taking kids to school. They explicitly Google "service auto cu masina la schimb Bragadiru".
+
+    The Funnel Play: An entire page dedicated to this benefit. Show photos of the actual cars you give out (e.g., clean VW Golfs, Dacia Logans, etc.). List the simple conditions (e.g., "Valabil pentru dosare RCA acoperite").
+
+    Proposed structure for pages/masina-la-schimb.vue:
+
+    The Hero: A high-impact headline like "Rămâi în mișcare. Primești o Mașină la Schimb Gratuit, pe toată durata reparației." (Keep moving. Get a Free Courtesy Car for the entire duration of the repair).
+
+    The "How it Works" (Condiții de Acordare): A clear, transparent 3-step process so they know there isn't a catch (e.g., 1. Deschidem dosarul de daună pe RCA-ul vinovatului. 2. Lăsați mașina avariată la noi. 3. Plecați cu mașina la schimb).
+
+    The Fleet (Flota noastră): A visual section showing that you offer clean, well-maintained cars.
+
+    The Legal Reassurance: Explaining that the cost of the replacement car is covered directly by the insurance company according to the law (Norma ASF), so they don't pay a single Leu out of pocket.
+
+    The Final CTA: A strong push to call or message on WhatsApp to check availability.
+
+    Huge selling point being that we give clients elegant cars, that don't have the name of the business written all over it like other competitors that use the cars as a huge
+    opportunity to market their repair shop, we offer cars without branding all over it. It doesn't scream "hey i just got in an accident" -->
+
+3. B2B / Flote Auto (/servicii-flote)
+
+    Why you need it: B2C (regular drivers) brings you one car. B2B (local delivery companies, real estate agents, sales teams) brings you 10 to 50 cars.
+
+    The Funnel Play: A page speaking directly to business owners. Keywords: Prioritate la reparații, facturare centralizată, mentenanță preventivă. A business owner's biggest fear is a car sitting idle, losing money. Promise them speed.
+
+<!-- 4. About Us / Echipa Noastră (/despre-noi)
+
+    Why you need it: The auto repair industry suffers from a massive lack of trust (fear of being scammed, fake parts, joyrides).
+
+    The Funnel Play: Show photos of the owner, the lead mechanic, the clean garage floor, and the waiting room (if you have a nice coffee area). A clean shop with smiling humans builds instant trust over a faceless corporate website. -->
+
+Dedicated Service Pages (/servicii/tinichigerie, /servicii/vopsitorie)
+
+"Constatare Online" Funnel (Photo upload & fast quote form) ?
+
+Interactive "Before & After" Slider Component
+
+Google Reviews "Wall of Love" Component
+
+"Facilități & Echipamente" (About Us / Our Shop) Page
+
+JSON-LD Schema Markup Integration (LocalBusiness, AutoRepair, FAQ)
+
+<!-- Strategic Custom 404 Error Page (error.vue) -->
+
+<!-- Location-Based SEO Landing Pages (Sector 5, Sector 6, Ilfov) -->
+
+If you write a genuinely helpful step-by-step guide on how to navigate a hit-and-run in Romania, other local sites, Facebook groups, and Reddit users will link to it. Those backlinks act like rocket fuel for your main pages (like your Homepage and Service Pages), pushing them to #1. maybe what to do incase show fell on your car from on top of block, town hall visit --> service? or any other Ghiduri si Resurse Auto as funnels
+
+Nuxt i18n Module Implementation (English version for the Expat market).
+
+"Ghiduri & Resurse Auto" (The SEO Knowledge Base / AI Information Gain).
+
+Location-Based Dynamic Pages (Targeting Sector 5, Sector 6, and Ilfov).

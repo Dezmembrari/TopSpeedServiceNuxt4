@@ -1,16 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
+    '@nuxtjs/seo',
     '@nuxt/eslint',
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/scripts',
-    '@nuxtjs/seo',
-    '@pinia/nuxt'
-    // '@formkit/auto-animate',
-    // '@formkit/nuxt'
+    '@pinia/nuxt',
+    '@nuxt/content'
   ],
 
   devtools: {
@@ -22,6 +21,10 @@ export default defineNuxtConfig({
   site: {
     url: 'https://topspeedservice.eu',
     name: 'Top Speed Service Auto'
+  },
+
+  content: {
+
   },
 
   // Enable experimental component detection for Nuxt UI

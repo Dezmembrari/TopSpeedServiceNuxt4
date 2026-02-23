@@ -1,44 +1,7 @@
 <script lang="ts" setup>
-// We don't need to explicitly import from #imports in Nuxt, it's auto-imported.
-// But keeping it specific doesn't hurt.
-
-// --- 1. Schema.org (SEO) ---
-useSchemaOrg([
-  {
-    '@type': 'AutoRepair',
-    'name': 'Top Speed Service',
-    'url': 'https://topspeedservice.eu',
-    'telephone': '+40788990011',
-    'address': {
-      '@type': 'PostalAddress',
-      'streetAddress': 'Sos. Clinceni, DJ401A 6',
-      'addressLocality': 'Bragadiru',
-      'postalCode': '077025',
-      'addressCountry': 'RO'
-    },
-    'geo': {
-      '@type': 'GeoCoordinates',
-      'latitude': 44.37006664441284,
-      'longitude': 25.96906184733097
-    },
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.4',
-      'reviewCount': '76'
-    },
-    'openingHours': 'Mo,Tu,We,Th,Fr 08:00-17:30', // Updated to match your site text
-    'priceRange': '$$', // Recommended for AutoRepair
-    'currenciesAccepted': 'RON,EUR',
-    'paymentAccepted': 'Cash, Credit Card',
-    'sameAs': [
-      'https://facebook.com/TopSpeedRomania/'
-    ]
-  }
-])
-
 // --- 2. Head Configuration ---
 useHead({
-  title: 'Top Speed Service | Service Auto Bragadiru',
+  titleTemplate: '%s | Top Speed Service Bragadiru', // %s is replaced by the page title
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'format-detection', content: 'telephone=no' }
@@ -50,10 +13,131 @@ useHead({
     lang: 'ro'
   }
 })
+
+useSchemaOrg([
+  {
+    '@type': ['AutoRepair', 'LocalBusiness'],
+    '@id': 'https://topspeedservice.eu/#localbusiness',
+    'name': 'Top Speed Service',
+    'description': 'Service auto premium în Bragadiru, Ilfov. Oferim servicii complete de mecanică, diagnoză auto, tinichigerie, vopsitorie la cuptor, încărcare freon și tractare. Decontare directă a daunelor auto pe polițe RCA și CASCO, platformă auto și mașină la schimb gratuită pe durata reparației.',
+    'url': 'https://topspeedservice.eu',
+    // 'logo': 'https://topspeedservice.eu/logo.png',
+    'image': 'https://topspeedservice.eu/service.jpeg',
+    'telephone': '+40788990011',
+    'email': 'office@topspeedservice.eu',
+    'priceRange': '$$',
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': 'Șoseaua Clinceni, DJ401A, Nr. 6',
+      'addressLocality': 'Bragadiru',
+      'addressRegion': 'Ilfov',
+      'postalCode': '077025',
+      'addressCountry': 'RO'
+    },
+    'geo': {
+      '@type': 'GeoCoordinates',
+      'latitude': 44.3658915,
+      'longitude': 25.9697562
+    },
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': '4.5',
+      'reviewCount': '76',
+      'bestRating': '5',
+      'worstRating': '1'
+    },
+    'openingHoursSpecification': [
+      {
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        'opens': '08:00',
+        'closes': '17:00'
+      }
+    ],
+    // Optimizare pentru a indica faptul că același număr este folosit pentru suport/rezervări
+    'contactPoint': {
+      '@type': 'ContactPoint',
+      'telephone': '+40788990011',
+      'contactType': 'Reservations',
+      'availableLanguage': ['Romanian', 'English']
+    },
+    'isAccessibleForFree': true,
+    'currenciesAccepted': 'RON, EUR',
+    'paymentAccepted': 'Cash, Credit Card, Bank Transfer',
+    'hasOfferCatalog': {
+      '@type': 'OfferCatalog',
+      'name': 'Servicii Auto',
+      'itemListElement': [
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Constatare Daune Auto și Decontare RCA/CASCO'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Platformă Tractare Auto (Decontată pe Asigurare)'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Mașină la Schimb Gratuită'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Tinichigerie Auto'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Vopsitorie Auto la Cuptor'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Mecanică Auto și Revizii'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Diagnoză Auto Computerizată (Tester Multimarcă)'
+          }
+        },
+        {
+          '@type': 'Offer',
+          'itemOffered': {
+            '@type': 'Service',
+            'name': 'Încărcare Freon Auto / Service AC (R134a și R1234yf)'
+          }
+        }
+      ]
+    },
+    'sameAs': [
+      'https://facebook.com/TopSpeedRomania/',
+      'https://www.google.com/maps/place/Top+Speed+Service+S.R.L./@44.3658915,25.9697562,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1ffdbe2537def:0xb5be45e52dd86aef!8m2!3d44.3658915!4d25.9697562!16s%2Fg%2F1tj5rns2',
+      'https://wa.me/40788990011' // LINK-UL DE WHATSAPP ADAUGAT AICI
+    ]
+  }
+])
 </script>
 
 <template>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <LazyCookieBanner />
 </template>

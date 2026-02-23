@@ -54,7 +54,7 @@ useHead({
               3. Piese de Schimb și Garanție
             </h2>
             <ul class="list-disc pl-5 space-y-2 mt-2">
-              <li>Garanția se acordă <strong>doar pentru piesele de schimb achiziționate prin intermediul service-ului nostru</strong> și pentru manopera aferentă acestora, conform legislației în vigoare (OG 21/1992, Legea 449/2003).</li>
+              <li>Garanția se acordă <strong>doar pentru piesele de schimb achiziționate prin intermediul service-ului nostru</strong> și pentru manopera aferentă acestora, conform legislației în vigoare (OG 21/1992).</li>
               <li>Ne rezervăm dreptul de a refuza montarea pieselor aduse de client dacă acestea nu corespund normelor de siguranță. Pentru piesele aduse de client, <strong>nu se acordă garanție.</strong></li>
             </ul>
           </section>
