@@ -37,7 +37,7 @@ const scrollToSection = (id: string) => {
         fetchpriority="high"
         preload
         quality="60"
-        format="webp, avif"
+        format="avif"
         sizes="300px xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
         densities="x1 x2"
       />
