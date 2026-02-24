@@ -138,6 +138,7 @@ const { trackLead } = useTracking()
                 v-for="(insurance, index) in insurances"
                 :key="insurance.id"
                 :to="`/asigurari/${insurance.id}`"
+                :aria-label="insurance.name"
                 class="aspect-3/2 bg-white rounded-xl border-2 border-gray-100 dark:border-gray-200 flex flex-col items-center justify-center p-3 md:p-4 hover:shadow-lg hover:border-blue-400 dark:hover:border-blue-500 hover:-translate-y-1 active:scale-95 transition-all duration-300 relative group overflow-hidden will-change-transform"
                 :class="[
                   !animateGrid ? 'opacity-0' : '',
@@ -165,6 +166,7 @@ const { trackLead } = useTracking()
                     :alt="`Siglă asigurare ${insurance.name}`"
                     width="120"
                     height="80"
+                    sizes="120px"
                     class="max-w-full max-h-full object-contain transition-opacity duration-500 relative z-10 group-hover:scale-105 pointer-events-none"
                     :class="{
                       'opacity-0': !loadedImages[insurance.id],

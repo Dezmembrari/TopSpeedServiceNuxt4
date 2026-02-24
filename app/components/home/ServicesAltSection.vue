@@ -134,7 +134,7 @@ onUnmounted(() => {
               loading="lazy"
               format="webp"
               quality="80"
-              sizes="90vw md:33vw lg:400px"
+              sizes="85vw sm:400px"
             />
 
             <div class="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none" />

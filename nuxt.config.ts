@@ -80,18 +80,18 @@ export default defineNuxtConfig({
     build: {
 
       // Manual chunking to separate Vue and UI libraries for better caching
-      rollupOptions: {
-        output: {
-          manualChunks: (id) => {
-            if (id.includes('node_modules/vue') || id.includes('node_modules/@vue')) {
-              return 'vue-core'
-            }
-            if (id.includes('node_modules/@headlessui') || id.includes('node_modules/@nuxt/ui')) {
-              return 'ui-vendor'
-            }
-          }
-        }
-      }
+      // rollupOptions: {
+      //   output: {
+      //     manualChunks: (id) => {
+      //       if (id.includes('node_modules/vue') || id.includes('node_modules/@vue')) {
+      //         return 'vue-core'
+      //       }
+      //       if (id.includes('node_modules/@headlessui') || id.includes('node_modules/@nuxt/ui')) {
+      //         return 'ui-vendor'
+      //       }
+      //     }
+      //   }
+      // }
     }
   },
 
@@ -121,7 +121,7 @@ export default defineNuxtConfig({
   },
 
   image: {
-    domains: ['images.unsplash.com', 'unsplash.com'], // Allow loading images from this domain
+    domains: ['images.unsplash.com', 'unsplash.com', 'cdn.brandfetch.io'], // Allow loading images from this domain
 
     presets: {
       thumbnail: {
