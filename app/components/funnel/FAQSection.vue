@@ -64,6 +64,8 @@ const openIndex = ref<number | null>(0)
 const toggleFaq = (index: number) => {
   openIndex.value = openIndex.value === index ? null : index
 }
+
+const trackLead = useTracking().trackLead
 </script>
 
 <template>
@@ -181,6 +183,7 @@ const toggleFaq = (index: number) => {
               class="bg-green-700 hover:bg-green-600 text-white font-bold px-8 py-4 shadow-xl shadow-green-900/20 text-lg rounded-2xl flex justify-center w-full sm:w-auto transition-transform hover:-translate-y-1"
               icon="i-line-md-phone-call-loop"
               to="tel:+40788990011"
+              @click="trackLead('phone')"
             >
               Sună acum
             </UButton>
@@ -192,6 +195,7 @@ const toggleFaq = (index: number) => {
               to="https://wa.me/40788990011"
               target="_blank"
               icon="i-line-md-chat"
+              @click="trackLead('whatsapp')"
             >
               Scrie-ne pe WhatsApp
             </UButton>

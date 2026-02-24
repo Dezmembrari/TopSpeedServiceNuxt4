@@ -20,7 +20,7 @@ useHead({
     <HomeServicesAltSection />
     <LazyHomeInsuranceSection />
 
-    <LazyHomeGallerySection />
+    <!-- <LazyHomeGallerySection /> -->
 
     <LazyHomeStepsAltSection />
 

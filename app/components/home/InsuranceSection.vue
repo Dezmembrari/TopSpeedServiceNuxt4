@@ -44,6 +44,8 @@ useIntersectionObserver(
   },
   { threshold: 0.2 }
 )
+
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -93,6 +95,7 @@ useIntersectionObserver(
             <a
               href="tel:+40788990011"
               class="group relative flex items-center justify-center gap-3 bg-green-700 hover:bg-[#1e5713] text-white px-8 py-4 rounded-2xl shadow-xl shadow-green-900/30 transition-all hover:-translate-y-1 w-full sm:w-auto"
+              @click="trackLead('phone')"
             >
               <div class="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
               <UIcon

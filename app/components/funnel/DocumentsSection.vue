@@ -7,6 +7,7 @@ const checkedDocs = ref<Set<string>>(new Set())
 // --- Global State for Floating Bar ---
 const hideFloatingBar = useState('hideFloatingBar', () => false)
 const sectionRef = ref<HTMLElement | null>(null)
+const { trackLead } = useTracking()
 
 onMounted(() => {
   // Watch if this section is visible on screen
@@ -269,6 +270,7 @@ const isAllDone = computed(() => progressPercentage.value === 100)
             color="neutral"
             class="font-black text-green-700 rounded-xl shadow-lg w-full sm:w-auto flex justify-center animate-[pulse_2s_ease-in-out_infinite] hover:scale-105 transition-transform"
             to="tel:+40788990011"
+            @click="trackLead('phone')"
           >
             <UIcon
               name="i-heroicons-phone-solid"

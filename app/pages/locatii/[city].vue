@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
+const { trackLead } = useTracking()
 
 // 1. Fetch data
 const { data: page } = await useAsyncData(`locatie-${route.params.city}`, () => {
@@ -129,6 +130,7 @@ useHead({
           <a
             href="tel:+40788990011"
             class="group relative flex items-center justify-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-8 py-5 rounded-2xl shadow-xl shadow-blue-900/30 transition-all hover:-translate-y-1 w-full sm:w-auto"
+            @click="trackLead('phone')"
           >
             <UIcon
               name="i-line-md-phone-call-loop"
@@ -145,6 +147,7 @@ useHead({
             class="border-2 font-bold px-8 py-5 rounded-2xl flex justify-center hover:bg-white dark:hover:bg-slate-800 bg-white/70 dark:bg-slate-900/50 backdrop-blur-sm text-xl text-gray-900 dark:text-white w-full sm:w-auto transition-all hover:-translate-y-1"
             to="https://wa.me/40788990011"
             target="_blank"
+            @click="trackLead('whatsapp')"
           >
             <template #leading>
               <UIcon
@@ -167,6 +170,7 @@ useHead({
           <span class="text-center sm:text-left">Atenție: Mașinile la schimb se acordă în limita flotei. <a
             href="tel:+40788990011"
             class="text-gray-900 dark:text-white underline decoration-orange-500 decoration-2 underline-offset-4 hover:text-orange-600 transition-colors"
+            @click="trackLead('phone')"
           >Sună acum pentru rezervare.</a></span>
         </div>
       </UContainer>
@@ -238,6 +242,7 @@ useHead({
               size="xl"
               class="bg-orange-500 hover:bg-orange-600 text-white font-black py-4 w-full justify-center rounded-xl transition-transform hover:-translate-y-1"
               to="tel:+40788990011"
+              @click="trackLead('phone')"
             >
               SOLICITĂ PLATFORMA ACUM
             </UButton>
@@ -248,7 +253,7 @@ useHead({
 
     <LazyHomeServicesAltSection />
     <LazyHomeInsuranceSection />
-    <LazyHomeGallerySection />
+    <!-- <LazyHomeGallerySection /> -->
     <LazyFunnelFAQSection />
     <LazyHomeContactSection />
 

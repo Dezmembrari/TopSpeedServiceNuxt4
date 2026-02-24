@@ -51,6 +51,8 @@ const faqs = [
     a: 'Acordarea mașinii la schimb pe polița CASCO depinde strict de clauzele contractului dumneavoastră (unele polițe includ acest beneficiu, altele nu). Pe RCA-ul vinovatului, însă, este un drept garantat prin lege.'
   }
 ]
+
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -83,6 +85,7 @@ const faqs = [
               class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-900/20 transition-transform active:scale-95 flex justify-center"
               icon="i-line-md-phone-call-loop"
               to="tel:+40788990011"
+              @click="trackLead('phone')"
             >
               Verifică disponibilitatea
             </UButton>
@@ -94,6 +97,7 @@ const faqs = [
               icon="i-line-md-chat"
               to="https://wa.me/40788990011"
               target="_blank"
+              @click="trackLead('whatsapp')"
             >
               Întreabă pe WhatsApp
             </UButton>
@@ -236,6 +240,7 @@ const faqs = [
           class="bg-green-700 hover:bg-[#1e5713] text-white font-bold px-10 py-5 rounded-2xl shadow-xl shadow-green-900/30 transition-transform active:scale-95 text-lg"
           icon="i-line-md-phone-call-loop"
           to="tel:+40788990011"
+          @click="trackLead('phone')"
         >
           0788 990 011
         </UButton>

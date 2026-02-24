@@ -8,6 +8,8 @@ const showMap = ref(false)
 const warmUpMap = () => {
   showMap.value = true
 }
+
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -33,6 +35,7 @@ const warmUpMap = () => {
             <a
               href="tel:+40788990011"
               class="flex items-center gap-5 p-5 sm:p-6 rounded-3xl bg-white dark:bg-slate-800 shadow-lg border border-gray-200 dark:border-slate-700 hover:shadow-2xl hover:scale-[1.02] hover:border-green-700 transition-all group"
+              @click="trackLead('phone')"
             >
               <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center group-hover:bg-green-700 transition-colors shrink-0">
                 <UIcon
@@ -49,6 +52,7 @@ const warmUpMap = () => {
             <a
               href="mailto:office@topspeedservice.eu"
               class="flex items-center gap-5 p-5 sm:p-6 rounded-3xl bg-white dark:bg-slate-800 shadow-lg border border-gray-200 dark:border-slate-700 hover:shadow-2xl hover:scale-[1.02] hover:border-blue-700 transition-all group"
+              @click="trackLead('email')"
             >
               <div class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-700 transition-colors shrink-0">
                 <UIcon
@@ -80,6 +84,7 @@ const warmUpMap = () => {
                   href="https://www.google.com/maps/search/?api=1&query=Top+Speed+Service+Bragadiru"
                   target="_blank"
                   class="text-base font-bold text-green-700 hover:underline inline-flex items-center gap-1"
+                  @click="trackLead('map')"
                 >
                   Deschide în Hărți (Waze / Google)
                   <UIcon

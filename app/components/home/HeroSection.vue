@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { isOpen, statusText } = useShopSchedule()
+const { trackLead } = useTracking()
 
 const scrollToSection = (id: string) => {
   const element = document.querySelector(id)
@@ -72,6 +73,7 @@ const scrollToSection = (id: string) => {
           <a
             href="tel:+40788990011"
             class="hidden md:flex group relative items-center justify-center gap-3 bg-green-700 hover:bg-[#1e5713] text-white px-12 py-5 rounded-2xl shadow-xl shadow-green-900/30 transition-all hover:-translate-y-1"
+            @click="trackLead('phone')"
           >
             <div class="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
             <UIcon

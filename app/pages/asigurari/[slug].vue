@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+const { trackLead } = useTracking()
 const route = useRoute()
 
 // 1. Fetch data - Nuxt auto-infers everything from content.config.ts!
@@ -184,6 +185,7 @@ useHead({
             href="tel:+40788990011"
             class="group relative flex items-center justify-center gap-3 bg-green-700 hover:bg-[#1e5713] text-white px-8 py-5 rounded-2xl shadow-xl shadow-green-900/30 transition-all hover:-translate-y-1 w-full sm:w-auto"
             aria-label="Sună-ne pentru constatare"
+            @click="trackLead('phone')"
           >
             <div class="absolute inset-0 bg-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
             <UIcon
@@ -202,6 +204,7 @@ useHead({
             to="https://wa.me/40788990011"
             target="_blank"
             aria-label="Scrie-ne pe WhatsApp"
+            @click="trackLead('whatsapp')"
           >
             <template #leading>
               <UIcon
@@ -346,7 +349,7 @@ useHead({
 
     <LazyFunnelDocumentsSection />
     <LazyHomeServicesAltSection />
-    <LazyHomeGallerySection />
+    <!-- <LazyHomeGallerySection /> -->
     <LazyFunnelFAQSection />
     <LazyHomeContactSection />
 

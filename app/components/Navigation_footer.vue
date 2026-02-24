@@ -30,6 +30,8 @@ const scrollToSection = async (id: string) => {
     element.scrollIntoView({ behavior: 'smooth' })
   }
 }
+
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -57,6 +59,7 @@ const scrollToSection = async (id: string) => {
             <a
               href="tel:+40788990011"
               class="flex items-center justify-center md:justify-start gap-2 hover:text-green-600 dark:hover:text-green-400 transition-colors"
+              @click="trackLead('phone')"
             >
               <UIcon
                 name="i-line-md-phone-call-loop"
@@ -66,6 +69,7 @@ const scrollToSection = async (id: string) => {
             <a
               href="mailto:office@topspeedservice.eu"
               class="flex items-center justify-center md:justify-start gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              @click="trackLead('email')"
             >
               <UIcon
                 name="i-line-md-email"

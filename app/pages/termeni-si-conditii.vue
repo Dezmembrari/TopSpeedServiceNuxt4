@@ -3,6 +3,8 @@ useHead({
   title: 'Termeni și Condiții | Top Speed Service',
   meta: [{ name: 'robots', content: 'noindex, follow' }]
 })
+
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -87,9 +89,11 @@ useHead({
               Pentru informații suplimentare, ne puteți contacta la <a
                 href="mailto:office@topspeedservice.eu"
                 class="text-blue-700 hover:underline font-bold"
+                @click="trackLead('email')"
               >office@topspeedservice.eu</a> sau <a
                 href="tel:+40788990011"
                 class="text-green-700 hover:underline font-bold"
+                @click="trackLead('phone')"
               >0788 990 011</a>.
             </p>
           </section>

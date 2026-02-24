@@ -50,6 +50,8 @@ const steps = [
     color: 'red'
   }
 ]
+
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -74,6 +76,7 @@ const steps = [
             class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 rounded-2xl flex justify-center w-full shadow-lg shadow-orange-900/30 transition-transform active:scale-95"
             icon="i-heroicons-truck"
             to="tel:+40788990011"
+            @click="trackLead('phone')"
           >
             Mașina e nedeplasabilă? Solicită Tractare
           </UButton>
@@ -83,6 +86,7 @@ const steps = [
             class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 rounded-2xl flex justify-center w-full shadow-lg shadow-green-900/30 transition-transform active:scale-95"
             icon="i-line-md-phone-call-loop"
             to="tel:+40788990011"
+            @click="trackLead('phone')"
           >
             Apelează un Expert (Gratuit)
           </UButton>
@@ -265,6 +269,7 @@ const steps = [
               class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 md:py-5 shadow-xl shadow-green-900/20 text-base md:text-lg rounded-2xl flex justify-center w-full sm:w-auto transition-transform active:scale-95"
               icon="i-line-md-phone-call-loop"
               to="tel:+40788990011"
+              @click="trackLead('phone')"
             >
               Programează Constatarea
             </UButton>
@@ -276,6 +281,7 @@ const steps = [
               to="https://wa.me/40788990011"
               target="_blank"
               icon="i-line-md-chat"
+              @click="trackLead('whatsapp')"
             >
               Trimite poze pe WhatsApp
             </UButton>

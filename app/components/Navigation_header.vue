@@ -168,6 +168,8 @@ onUnmounted(() => {
   if (resurseTimeout) clearTimeout(resurseTimeout)
   if (zoneTimeout) clearTimeout(zoneTimeout)
 })
+
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -181,6 +183,7 @@ onUnmounted(() => {
           <a
             href="tel:+40788990011"
             class="flex items-center gap-2 hover:text-green-400 transition-colors font-semibold"
+            @click="trackLead('phone')"
           >
             <UIcon
               name="i-line-md-phone-call-loop"
@@ -190,6 +193,7 @@ onUnmounted(() => {
           <a
             href="mailto:office@topspeedservice.eu"
             class="hidden sm:flex items-center gap-2 hover:text-green-400 transition-colors"
+            @click="trackLead('email')"
           >
             <UIcon
               name="i-line-md-email"
@@ -400,6 +404,7 @@ onUnmounted(() => {
             class="ml-2 bg-green-700 hover:bg-[#1e5713] text-white font-bold px-4 lg:px-6 shadow-lg shadow-green-900/20 transition-transform hover:scale-105 will-change-transform"
             icon="i-line-md-phone-call-loop"
             to="tel:+40788990011"
+            @click="trackLead('phone')"
           >
             Contact
           </UButton>
@@ -603,6 +608,7 @@ onUnmounted(() => {
             size="xl"
             icon="i-line-md-phone-call-loop"
             to="tel:+40788990011"
+            @click="trackLead('phone')"
           >
             Sună Acum
           </UButton>

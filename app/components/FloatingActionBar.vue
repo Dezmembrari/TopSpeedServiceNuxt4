@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Tap into the global state created by the FunnelDocumentsSection.
 const hideFloatingBar = useState('hideFloatingBar', () => false)
+const { trackLead } = useTracking()
 </script>
 
 <template>
@@ -18,6 +19,7 @@ const hideFloatingBar = useState('hideFloatingBar', () => false)
       to="https://wa.me/40788990011"
       aria-label="Scrie-ne pe WhatsApp"
       target="_blank"
+      @click="trackLead('whatsapp')"
     />
     <UButton
       block
@@ -25,6 +27,7 @@ const hideFloatingBar = useState('hideFloatingBar', () => false)
       class="bg-green-700 hover:bg-green-600 text-white flex-2 font-bold shadow-lg rounded-xl transition-transform active:scale-95"
       icon="i-line-md-phone-call-loop"
       to="tel:+40788990011"
+      @click="trackLead('phone')"
     >
       Sună Acum
     </UButton>
