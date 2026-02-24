@@ -112,11 +112,11 @@ export default defineNuxtConfig({
       styles: ['normal', 'italic'],
       subsets: ['latin-ext', 'latin'],
       preload: true
-    },
-
-    experimental: {
-      processCSSVariables: true
     }
+
+    // experimental: {
+    //   processCSSVariables: true
+    // }
   },
 
   icon: {
@@ -126,7 +126,7 @@ export default defineNuxtConfig({
   },
 
   image: {
-    domains: ['images.unsplash.com', 'unsplash.com', 'cdn.brandfetch.io'], // Allow loading images from this domain
+    domains: ['images.unsplash.com', 'unsplash.com'], // Allow loading images from this domain
 
     presets: {
       thumbnail: {
