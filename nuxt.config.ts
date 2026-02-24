@@ -110,7 +110,12 @@ export default defineNuxtConfig({
     defaults: {
       weights: [400, 700],
       styles: ['normal', 'italic'],
-      subsets: ['latin-ext', 'latin']
+      subsets: ['latin-ext', 'latin'],
+      preload: true
+    },
+
+    experimental: {
+      processCSSVariables: true
     }
   },
 
