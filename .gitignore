@@ -25,3 +25,6 @@ logs
 
 # Lock files for package managers, they can be generated from package.json
 package-lock.json
+
+# Lighthouse output files
+.unlighthouse
