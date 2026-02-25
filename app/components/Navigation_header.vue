@@ -10,16 +10,21 @@ const colorMode = useColorMode()
 const isMobileMenuOpen = ref(false)
 const isMobileAsigurariOpen = ref(false)
 const isMobileResurseOpen = ref(false)
-const isMobileZoneOpen = ref(false) // NEW: Mobile Zone State
+const isMobileZoneOpen = ref(false)
 
 // Desktop State
 const isDesktopAsigurariOpen = ref(false)
 const isDesktopResurseOpen = ref(false)
-const isDesktopZoneOpen = ref(false) // NEW: Desktop Zone State
+const isDesktopZoneOpen = ref(false)
 
+// Desktop Refs
 const desktopAsigurariRef = ref<HTMLElement | null>(null)
 const desktopResurseRef = ref<HTMLElement | null>(null)
-const desktopZoneRef = ref<HTMLElement | null>(null) // NEW: Ref for Zone
+const desktopZoneRef = ref<HTMLElement | null>(null)
+
+// Mobile Refs for Outside Click
+const mobileMenuRef = ref<HTMLElement | null>(null)
+const mobileHeaderControlsRef = ref<HTMLElement | null>(null)
 
 const scrollY = ref(0)
 const isHeaderCompact = computed(() => scrollY.value > 40)
@@ -44,7 +49,7 @@ const { data: insurancesData } = await useAsyncData('menu-insurances', () => {
   return queryCollection('asigurari').select('path', 'insurerName').all()
 })
 
-// NEW: FETCH LOCATIONS FROM CONTENT V3
+// FETCH LOCATIONS FROM CONTENT V3
 const { data: locatiiData } = await useAsyncData('menu-locatii', () => {
   return queryCollection('locatii').select('path', 'cityName').all()
 })
@@ -62,7 +67,7 @@ const scrollToSection = async (id: string) => {
   isMobileMenuOpen.value = false
   isDesktopAsigurariOpen.value = false
   isDesktopResurseOpen.value = false
-  isDesktopZoneOpen.value = false // NEW
+  isDesktopZoneOpen.value = false
 
   const targetElement = document.querySelector(id)
 
@@ -87,10 +92,10 @@ watch(() => route.path, () => {
   isMobileMenuOpen.value = false
   isMobileAsigurariOpen.value = false
   isMobileResurseOpen.value = false
-  isMobileZoneOpen.value = false // NEW
+  isMobileZoneOpen.value = false
   isDesktopAsigurariOpen.value = false
   isDesktopResurseOpen.value = false
-  isDesktopZoneOpen.value = false // NEW
+  isDesktopZoneOpen.value = false
 })
 
 // --- Dropdown Logic (Asigurari) ---
@@ -129,7 +134,7 @@ const handleResurseLeave = (e: PointerEvent) => {
   }
 }
 
-// --- NEW: Dropdown Logic (Zone Acoperite) ---
+// --- Dropdown Logic (Zone Acoperite) ---
 let zoneTimeout: ReturnType<typeof setTimeout> | null = null
 const handleZoneEnter = (e: PointerEvent) => {
   if (e.pointerType === 'mouse') {
@@ -149,9 +154,18 @@ const handleZoneLeave = (e: PointerEvent) => {
 
 const closeDropdownOnOutsideClick = (e: MouseEvent | TouchEvent) => {
   const target = e.target as Node
+
+  // Desktop Logic
   if (isDesktopAsigurariOpen.value && desktopAsigurariRef.value && !desktopAsigurariRef.value.contains(target)) isDesktopAsigurariOpen.value = false
   if (isDesktopResurseOpen.value && desktopResurseRef.value && !desktopResurseRef.value.contains(target)) isDesktopResurseOpen.value = false
   if (isDesktopZoneOpen.value && desktopZoneRef.value && !desktopZoneRef.value.contains(target)) isDesktopZoneOpen.value = false
+
+  // Mobile Logic
+  if (isMobileMenuOpen.value && mobileMenuRef.value && mobileHeaderControlsRef.value) {
+    if (!mobileMenuRef.value.contains(target) && !mobileHeaderControlsRef.value.contains(target)) {
+      isMobileMenuOpen.value = false
+    }
+  }
 }
 
 onMounted(() => {
@@ -410,7 +424,10 @@ const { trackLead } = useTracking()
           </UButton>
         </div>
 
-        <div class="md:hidden flex items-center gap-2">
+        <div
+          ref="mobileHeaderControlsRef"
+          class="md:hidden flex items-center gap-2"
+        >
           <UButton
             color="neutral"
             variant="ghost"
@@ -429,9 +446,9 @@ const { trackLead } = useTracking()
           <UButton
             color="neutral"
             variant="ghost"
-            icon="i-heroicons-bars-3"
+            :icon="isMobileMenuOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'"
             size="lg"
-            class="text-slate-900 dark:text-white"
+            class="text-slate-900 dark:text-white transition-all duration-200"
             aria-label="Deschide meniu"
             @click="isMobileMenuOpen = !isMobileMenuOpen"
           />
@@ -449,6 +466,7 @@ const { trackLead } = useTracking()
     >
       <div
         v-show="isMobileMenuOpen"
+        ref="mobileMenuRef"
         class="absolute top-full left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-gray-200 dark:border-slate-800 shadow-2xl md:hidden z-40 max-h-[85vh] overflow-y-auto"
       >
         <div class="p-4 flex flex-col gap-2">
