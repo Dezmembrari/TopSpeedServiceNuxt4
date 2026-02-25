@@ -20,8 +20,8 @@ export function useTracking() {
     if (state.analytics && window.gtag) {
       window.gtag('event', 'generate_lead', {
         event_category: 'Contact',
-        event_label: method,
-        value: 1 // Optional: assign a dummy value to the lead
+        event_label: method
+        // value: 1 // Optional: assign a dummy value to the lead
       })
     }
 
