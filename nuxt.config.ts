@@ -68,7 +68,8 @@ export default defineNuxtConfig({
       concurrency: 10, // Speeds up the process on multi-core CPUs
       // FIX 2: Tell Nitro NOT to try saving image files to disk during build
       // This prevents the Windows "https:" filename error
-      ignore: ['/_ipx']
+      ignore: ['/_ipx'],
+      routes: ['/sitemap.xml', '/robots.txt', '/'] // Pre-render these routes for better SEO and performance
     }
   },
 
@@ -140,6 +141,6 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    zeroRuntime: true
+    zeroRuntime: true // Generate sitemap at build time without runtime overhead
   }
 })

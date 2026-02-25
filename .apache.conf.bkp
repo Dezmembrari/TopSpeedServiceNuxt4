@@ -1,0 +1,286 @@
+# Global SSL Configuration
+SSLSessionCache shmcb:/var/run/apache2/sslcache(512000)
+SSLSessionCacheTimeout 300
+
+# Define custom log format with request duration in microseconds (%D)
+LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D" combined_time
+
+# ---------------------------------------------------------
+# PORT 80 - Redirect all HTTP traffic to HTTPS
+# ---------------------------------------------------------
+<VirtualHost 192.168.0.6:80>
+    ServerName topspeedservice.eu
+    ServerAlias www.topspeedservice.eu mail.topspeedservice.eu webmail.topspeedservice.eu admin.topspeedservice.eu
+
+    RewriteEngine On
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    ErrorLog /var/log/virtualmin/topspeedservice.eu_error_log
+    CustomLog /var/log/virtualmin/topspeedservice.eu_access_log combined_time
+</VirtualHost>
+
+# ---------------------------------------------------------
+# SUBDOMAINS - Isolated to prevent Proxy collision
+# ---------------------------------------------------------
+<VirtualHost 192.168.0.6:443>
+    ServerName webmail.topspeedservice.eu
+    SSLEngine on
+    SSLCertificateFile /home/topspeedservice.eu/ssl.cert
+    SSLCertificateKeyFile /home/topspeedservice.eu/ssl.key
+    SSLCACertificateFile /home/topspeedservice.eu/ssl.ca
+    Redirect permanent / https://topspeedservice.eu:20000/
+</VirtualHost>
+
+<VirtualHost 192.168.0.6:443>
+    ServerName admin.topspeedservice.eu
+    SSLEngine on
+    SSLCertificateFile /home/topspeedservice.eu/ssl.cert
+    SSLCertificateKeyFile /home/topspeedservice.eu/ssl.key
+    SSLCACertificateFile /home/topspeedservice.eu/ssl.ca
+    Redirect permanent / https://topspeedservice.eu:8989/
+</VirtualHost>
+
+# ---------------------------------------------------------
+# MAIN NUXT APPLICATION (Port 443)
+# ---------------------------------------------------------
+<VirtualHost 192.168.0.6:443>
+    ServerName topspeedservice.eu
+    ServerAlias www.topspeedservice.eu
+
+    # Strict Modern SSL Configuration
+    SSLEngine on
+    SSLProtocol TLSv1.2 TLSv1.3
+    SSLCipherSuite HIGH:!aNULL:!MD5:!3DES
+    SSLHonorCipherOrder On
+    SSLCertificateFile /home/topspeedservice.eu/ssl.cert
+    SSLCertificateKeyFile /home/topspeedservice.eu/ssl.key
+    SSLCACertificateFile /home/topspeedservice.eu/ssl.ca
+
+    # HTTP/2 Support
+    Protocols h2 http/1.1
+
+    # Security Headers & Permissions Policy
+    <IfModule mod_headers.c>
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        Header always set X-Frame-Options "SAMEORIGIN"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-XSS-Protection "1; mode=block"
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+        Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    </IfModule>
+
+    # Compression
+    <IfModule mod_brotli.c>
+        AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+    </IfModule>
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+    </IfModule>
+
+    # Sitemap & Robots - Self-Contained Proxy & Headers
+    <LocationMatch "sitemap\.xml$">
+        Header unset Cache-Control
+        Header unset Expires
+        Header always set Cache-Control "public, max-age=3600, must-revalidate"
+        Header set Content-Type "application/xml"
+        ProxyPass http://localhost:3000/sitemap.xml
+        ProxyPassReverse http://localhost:3000/sitemap.xml
+    </LocationMatch>
+
+    <LocationMatch "robots\.txt$">
+        Header unset Cache-Control
+        Header unset Expires
+        Header always set Cache-Control "public, max-age=3600, must-revalidate"
+        Header set Content-Type "text/plain"
+        ProxyPass http://localhost:3000/robots.txt
+        ProxyPassReverse http://localhost:3000/robots.txt
+    </LocationMatch>
+
+    # Global Proxy Configuration
+    ProxyPreserveHost On
+    ProxyRequests Off
+    ProxyTimeout 30
+    ProxyErrorOverride On
+    RequestHeader set X-Forwarded-Proto "https"
+
+    # 1. Catch Let's Encrypt FIRST
+    ProxyPass /.well-known !
+
+    # 2. Catch everything else
+    ProxyPass / http://localhost:3000/
+    ProxyPassReverse / http://localhost:3000/
+
+    # Logging using the custom duration format
+    ErrorLog /var/log/virtualmin/topspeedservice.eu_error_log
+    CustomLog /var/log/virtualmin/topspeedservice.eu_access_log combined_time
+</VirtualHost>
+
+////////////////////actual version above this line///////////////////////////////////////////////////////////////
+////////////////////old old version below this line//////////////////////////////////////////////////////////////
+
+
+# Global SSL Configuration
+SSLSessionCache shmcb:/var/run/apache2/sslcache(512000)
+SSLSessionCacheTimeout 300
+
+# HTTP (Port 80) VirtualHost - Redirect to HTTPS
+<VirtualHost 192.168.0.6:80>
+    ServerName topspeedservice.eu
+    ServerAlias www.topspeedservice.eu mail.topspeedservice.eu webmail.topspeedservice.eu admin.topspeedservice.eu
+
+    # Enable rewrite engine
+    RewriteEngine On
+
+    # Redirect all HTTP traffic to HTTPS
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Error and Access Logs
+    ErrorLog /var/log/virtualmin/topspeedservice.eu_error_log
+    CustomLog /var/log/virtualmin/topspeedservice.eu_access_log combined
+</VirtualHost>
+
+# HTTPS (Port 443) VirtualHost
+<VirtualHost 192.168.0.6:443>
+    ServerName topspeedservice.eu
+    ServerAlias www.topspeedservice.eu mail.topspeedservice.eu webmail.topspeedservice.eu admin.topspeedservice.eu
+
+    # SSL Configuration
+    SSLEngine on
+    SSLProtocol all -SSLv2 -SSLv3
+    SSLCertificateFile /home/topspeedservice.eu/ssl.cert
+    SSLCertificateKeyFile /home/topspeedservice.eu/ssl.key
+    SSLCACertificateFile /home/topspeedservice.eu/ssl.ca
+
+    # HTTP/2 Support
+    Protocols h2 http/1.1
+
+    # Content type headers for sitemap and robots
+    <LocationMatch "sitemap\.xml$">
+        Header set Content-Type "application/xml"
+        ProxyPass http://localhost:3000/sitemap.xml
+        ProxyPassReverse http://localhost:3000/sitemap.xml
+    </LocationMatch>
+
+    <LocationMatch "robots\.txt$">
+        Header set Content-Type "text/plain"
+        ProxyPass http://localhost:3000/robots.txt
+        ProxyPassReverse http://localhost:3000/robots.txt
+    </LocationMatch>
+
+    # Proxy Configuration
+    ProxyPreserveHost On
+    ProxyRequests Off
+    ProxyPass / http://localhost:3000/
+    ProxyPassReverse / http://localhost:3000/
+    RequestHeader set X-Forwarded-Proto "https"
+
+    # Exclude .well-known from proxy
+    ProxyPass /.well-known !
+
+    # 1. BROTLI Compression (Priority)
+    <IfModule mod_brotli.c>
+        AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+    </IfModule>
+
+    # 2. GZIP Compression (Fallback)
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
+    </IfModule>
+
+    # Logging Configuration
+    ErrorLog /var/log/virtualmin/topspeedservice.eu_error_log
+    CustomLog /var/log/virtualmin/topspeedservice.eu_access_log combined
+
+    # Enable mod_headers
+    <IfModule mod_headers.c>
+        # Security Headers
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        Header always set X-Frame-Options "SAMEORIGIN"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-XSS-Protection "1; mode=block"
+        Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+        # Cache Control Headers for Static Assets
+        <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|svg|js|css|woff|woff2|webp)$|/_ipx/">
+            Header set Cache-Control "public, max-age=31536000, immutable"
+        </FilesMatch>
+
+        # Cache Control Headers for HTML/XML
+        <FilesMatch "\.(html|htm|xml)$">
+            Header set Cache-Control "public, max-age=3600, must-revalidate"
+        </FilesMatch>
+
+        # Prevent Caching of Dynamic Content
+        <FilesMatch "\.(php|py|cgi|pl)$">
+            Header set Cache-Control "private, no-cache, no-store, must-revalidate"
+            Header set Pragma "no-cache"
+            Header set Expires "0"
+        </FilesMatch>
+
+        # CORS Headers for Static Assets
+        <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|svg|js|css|woff|woff2|webp)$|/_ipx/">
+            Header set Access-Control-Allow-Origin "*"
+        </FilesMatch>
+    </IfModule>
+
+    # Cache Configuration
+    <IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresDefault "access plus 1 month"
+
+        # Images
+        ExpiresByType image/jpeg "access plus 1 year"
+        ExpiresByType image/png "access plus 1 year"
+        ExpiresByType image/gif "access plus 1 year"
+        ExpiresByType image/svg+xml "access plus 1 year"
+        ExpiresByType image/x-icon "access plus 1 year"
+        ExpiresByType image/webp "access plus 1 year"
+
+        # CSS, JavaScript
+        ExpiresByType text/css "access plus 1 year"
+        ExpiresByType text/javascript "access plus 1 year"
+        ExpiresByType application/javascript "access plus 1 year"
+        ExpiresByType application/x-javascript "access plus 1 year"
+
+        # Fonts
+        ExpiresByType application/font-woff "access plus 1 year"
+        ExpiresByType application/font-woff2 "access plus 1 year"
+        ExpiresByType application/x-font-ttf "access plus 1 year"
+        ExpiresByType application/x-font-opentype "access plus 1 year"
+        ExpiresByType font/woff "access plus 1 year"
+        ExpiresByType font/woff2 "access plus 1 year"
+
+        # Media
+        ExpiresByType audio/ogg "access plus 1 year"
+        ExpiresByType video/mp4 "access plus 1 year"
+        ExpiresByType video/ogg "access plus 1 year"
+        ExpiresByType video/webm "access plus 1 year"
+
+        # Data
+        ExpiresByType application/pdf "access plus 1 month"
+        ExpiresByType application/json "access plus 0 seconds"
+        ExpiresByType application/xml "access plus 0 seconds"
+    </IfModule>
+
+    # ETags Configuration
+    FileETag MTime Size
+
+    # Rewrite Rules
+    RewriteEngine On
+
+    # Webmail Redirect
+    RewriteCond %{HTTP_HOST} =webmail.topspeedservice.eu
+    RewriteRule ^/?(.*)$ https://topspeedservice.eu:20000/ [R]
+
+    # Admin Redirect
+    RewriteCond %{HTTP_HOST} =admin.topspeedservice.eu
+    RewriteRule ^/?(.*)$ https://topspeedservice.eu:8989/ [R]
+
+    # Static Assets Exception
+    RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|woff|woff2)$
+    RewriteRule ^ - [L]
+</VirtualHost>
