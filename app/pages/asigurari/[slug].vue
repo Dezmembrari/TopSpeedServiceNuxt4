@@ -123,7 +123,7 @@ useHead({
             <div class="relative z-10 bg-white rounded-3xl px-12 py-8 border-[3px] border-white ring-1 ring-gray-900/5 overflow-hidden flex flex-col items-center justify-center">
               <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 bg-blue-400/20 dark:bg-blue-500/20 blur-[60px] pointer-events-none" />
 
-              <NuxtImg
+              <!-- <NuxtImg
                 :src="page.insurerLogo"
                 :alt="`Siglă ${page.insurerName}`"
                 class="h-16 md:h-20 max-w-50 object-contain relative z-20 drop-shadow-sm mx-auto block"
@@ -132,6 +132,22 @@ useHead({
                   'rounded-xl md:rounded-2xl': page.insurerName === 'Hellas Direct'
                 }"
                 loading="eager"
+                format="webp"
+              /> -->
+
+              <NuxtPicture
+                :src="page.insurerLogo"
+                :alt="`Siglă ${page.insurerName}`"
+                class="relative z-20 flex items-center justify-center mx-auto h-16 md:h-20 max-w-50"
+                :img-attrs="{
+                  class: [
+                    'object-contain w-full h-full drop-shadow-sm',
+                    (page.insurerName === 'Unica' || page.insurerName === 'Axeria Iard') ? 'brightness-0' : '',
+                    page.insurerName === 'Hellas Direct' ? 'rounded-xl md:rounded-2xl' : ''
+                  ]
+                }"
+                loading="eager"
+                format="avif,webp"
               />
 
               <span

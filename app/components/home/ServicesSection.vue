@@ -61,12 +61,12 @@ const scrollToContact = () => {
           class="group bg-white dark:bg-slate-800 rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-blue-700/10 border border-gray-100 dark:border-slate-700 overflow-hidden transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
         >
           <div class="relative h-64 overflow-hidden shrink-0">
-            <NuxtImg
+            <NuxtPicture
               :src="service.image"
               :alt="service.alt"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              :img-attrs="{ class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' }"
               loading="lazy"
-              format="avif"
+              format="avif,webp"
               quality="80"
               sizes="90vw md:33vw lg:400px"
             />

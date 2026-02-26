@@ -1,9 +1,13 @@
 <script setup lang="ts">
+// I have added a 'position' string to each image.
+// 'object-center' is the default.
+// 'object-[20%_50%]' means: "Shift the focal point 20% from the left, 50% from the top".
+// You can play with these percentages (or use 'object-left') until the cars look perfect!
 const aboutImages = [
-  { src: '/semercedesw118.jpeg', alt: 'Mercedes W118 SE' },
-  { src: '/service.jpeg', alt: 'Top Speed Service' },
-  { src: '/bmwi8.jpeg', alt: 'BMW i8' },
-  { src: '/hero.webp', alt: 'Mecanica Generala' }
+  { src: '/semercedesw118.jpeg', alt: 'Mercedes W118 SE', position: 'object-[60%_50%]' },
+  { src: '/service.jpeg', alt: 'Top Speed Service', position: 'object-center' },
+  { src: '/bmwi8.jpeg', alt: 'BMW i8', position: 'object-[70%_50%]' }, // Moves crop to the left
+  { src: '/hero.webp', alt: 'Mecanica Generala', position: 'object-center' } // Moves crop to the left
 ]
 </script>
 
@@ -51,25 +55,29 @@ const aboutImages = [
 
         <div class="md:w-1/2 grid grid-cols-2 gap-4 md:gap-6">
           <div class="space-y-4 md:space-y-6 mt-8 md:mt-12">
-            <NuxtImg
+            <NuxtPicture
               v-for="(img, idx) in aboutImages.slice(0, 2)"
               :key="idx"
               :src="img.src"
               :alt="img.alt"
-              class="rounded-2xl md:rounded-3xl shadow-xl w-full h-40 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
+              class="block w-full"
+              :img-attrs="{ class: `rounded-2xl md:rounded-3xl shadow-xl w-full h-40 md:h-64 object-cover hover:scale-105 transition-transform duration-500 ${img.position}` }"
               loading="lazy"
-              preset="thumbnail"
+              format="avif,webp"
+              sizes="sm:50vw md:300px"
             />
           </div>
           <div class="space-y-4 md:space-y-6">
-            <NuxtImg
+            <NuxtPicture
               v-for="(img, idx) in aboutImages.slice(2, 4)"
               :key="idx"
               :src="img.src"
               :alt="img.alt"
-              class="rounded-2xl md:rounded-3xl shadow-xl w-full h-40 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
+              class="block w-full"
+              :img-attrs="{ class: `rounded-2xl md:rounded-3xl shadow-xl w-full h-40 md:h-64 object-cover hover:scale-105 transition-transform duration-500 ${img.position}` }"
               loading="lazy"
-              preset="thumbnail"
+              format="avif,webp"
+              sizes="sm:50vw md:300px"
             />
           </div>
         </div>

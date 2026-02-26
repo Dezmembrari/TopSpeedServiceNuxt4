@@ -19,7 +19,7 @@ const scrollToSection = (id: string) => {
         height="1125"
         densities="x1 x2"
         sizes="100vw sm:100vw md:100vw lg:1920px" -->
-      <!-- <NuxtImg
+      <!-- <NuxtPicture
         src="/hero.webp"
         alt="Service Auto Bragadiru Top Speed"
         class="w-full h-full object-cover object-center md:object-[50%_40%] transition-transform duration-[20s] hover:scale-105"
@@ -29,15 +29,15 @@ const scrollToSection = (id: string) => {
         sizes="100vw md:33vw lg:400px"
         fetchpriority="high"
       /> -->
-      <NuxtImg
+      <NuxtPicture
         src="/hero.webp"
         alt="Service Auto Bragadiru Top Speed"
-        class="w-full h-full object-cover object-center md:object-[50%_40%] transition-transform duration-[20s] hover:scale-105"
+        :img-attrs="{ class: 'w-full h-full object-cover object-center md:object-[50%_40%] transition-transform duration-[20s] hover:scale-105' }"
         loading="eager"
         fetchpriority="high"
         preload
         quality="60"
-        format="avif"
+        format="avif,webp"
         sizes="300px xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
         densities="x1 x2"
       />

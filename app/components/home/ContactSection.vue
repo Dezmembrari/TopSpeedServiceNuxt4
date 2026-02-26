@@ -123,13 +123,13 @@ const { trackLead } = useTracking()
             v-if="!showMap"
             class="absolute inset-0 w-full h-full z-10 flex items-center justify-center"
           >
-            <NuxtImg
+            <NuxtPicture
               src="/maps_screenshot.webp"
               alt="Harta Locatie"
-              class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500"
+              :img-attrs="{ class: 'absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500' }"
               width="600"
               height="400"
-              format="avif"
+              format="avif,webp"
               sizes="100vw md:50vw lg:300px"
               loading="lazy"
             />

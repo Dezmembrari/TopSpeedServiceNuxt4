@@ -180,7 +180,7 @@ const { trackLead } = useTracking()
                     />
                   </div>
 
-                  <!-- <NuxtImg
+                  <!-- <NuxtPicture
                     :src="insurance.logo"
                     :alt="`Siglă asigurare ${insurance.name}`"
                     width="120"
@@ -194,12 +194,12 @@ const { trackLead } = useTracking()
                       'brightness-0': insurance.id === 'axeria' || insurance.id === 'unica'
                     }"
                     loading="lazy"
-                    format="avif"
+                    format="webp"
                     quality="80"
                     @load="onImageLoad(insurance.id)"
                   /> -->
 
-                  <!-- <NuxtImg
+                  <!-- <NuxtPicture
                     :src="insurance.logo"
                     :alt="`Siglă asigurare ${insurance.name}`"
                     class="w-full h-full object-contain p-3 transition-transform opacity-100 duration-500 relative z-10 group-hover:scale-110 pointer-events-none"
@@ -210,13 +210,13 @@ const { trackLead } = useTracking()
                       'brightness-0': insurance.id === 'axeria' || insurance.id === 'unica'
                     }"
                     loading="lazy"
-                    format="avif"
+                    format="webp"
                     quality="90"
                     fit="contain"
                     @load="onImageLoad(insurance.id)"
                   /> -->
 
-                  <NuxtImg
+                  <!-- <NuxtImg
                     :src="insurance.logo"
                     :alt="`Siglă asigurare ${insurance.name}`"
                     class="object-contain transition-transform duration-500 relative z-10 group-hover:scale-110 pointer-events-none"
@@ -233,7 +233,30 @@ const { trackLead } = useTracking()
                       'brightness-0': insurance.id === 'axeria' || insurance.id === 'unica'
                     }"
                     loading="lazy"
-                    format="avif"
+                    format="webp"
+                    quality="90"
+                    fit="contain"
+                    @load="onImageLoad(insurance.id)"
+                  /> -->
+
+                  <NuxtPicture
+                    :src="insurance.logo"
+                    :alt="`Siglă asigurare ${insurance.name}`"
+                    class="flex items-center justify-center w-full h-full"
+                    :img-attrs="{
+                      class: [
+                        /* Static Classes */
+                        'object-contain transition-transform duration-500 relative z-10 group-hover:scale-110 pointer-events-none',
+                        /* Dynamic Classes */
+                        !loadedImages[insurance.id] ? 'opacity-0' : 'opacity-100',
+                        ['baar', 'axeria', 'asirom'].includes(insurance.id) ? 'max-w-[92%] max-h-[75%]' : '',
+                        insurance.id === 'hellas' ? 'max-w-[75%] max-h-[75%]' : '',
+                        !['baar', 'axeria', 'asirom', 'hellas'].includes(insurance.id) ? 'max-w-[85%] max-h-[80%]' : '',
+                        ['axeria', 'unica'].includes(insurance.id) ? 'brightness-0' : ''
+                      ]
+                    }"
+                    loading="lazy"
+                    format="avif,webp"
                     quality="90"
                     fit="contain"
                     @load="onImageLoad(insurance.id)"

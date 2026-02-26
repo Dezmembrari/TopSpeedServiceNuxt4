@@ -166,7 +166,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
               :loading="index < 4 ? 'eager' : 'lazy'"
               :fetchpriority="index < 4 ? 'high' : 'auto'"
               decoding="async"
-              format="avif"
+              format="webp"
               quality="75"
               sizes="100vw md:50vw lg:33vw"
               class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
@@ -235,14 +235,14 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
           <NuxtImg
             v-if="images?.[currentIndex + 1]"
             :src="images[currentIndex + 1]"
-            format="avif"
+            format="webp"
             quality="90"
             width="1200"
           />
           <NuxtImg
             v-if="images?.[currentIndex - 1]"
             :src="images[currentIndex - 1]"
-            format="avif"
+            format="webp"
             quality="90"
             width="1200"
           />
@@ -318,7 +318,7 @@ onUnmounted(() => window.removeEventListener('keydown', handleKeydown))
                 alt="Proiect marit"
                 class="max-w-full max-h-full object-contain rounded-xl shadow-2xl md:shadow-[0_20px_50px_rgba(0,0,0,0.3)] select-none pointer-events-none transition-opacity duration-300"
                 :class="isLightboxImageLoaded ? 'opacity-100' : 'opacity-0'"
-                format="avif"
+                format="webp"
                 quality="90"
                 width="1200"
                 decoding="async"

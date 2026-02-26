@@ -127,15 +127,26 @@ onUnmounted(() => {
           class="w-[85vw] md:w-100 lg:w-auto shrink-0 snap-center flex flex-col bg-white/70 dark:bg-slate-900/60 backdrop-blur-2xl border border-white/60 dark:border-slate-700/50 rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group h-full relative"
         >
           <div class="relative h-72 md:h-80 w-full shrink-0 overflow-hidden rounded-t-[2.5rem]">
-            <NuxtImg
+            <!-- <NuxtPicture
               :src="service.image"
               :alt="service.alt"
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0"
+              :img-attrs="{ class: 'absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0' }"
               loading="lazy"
-              format="avif"
+              format="webp"
               quality="60"
               sizes="85vw xs:100vw sm:100px md:450px"
               densities="x1"
+            /> -->
+
+            <NuxtPicture
+              :src="service.image"
+              :alt="service.alt"
+              class="absolute inset-0 w-full h-full"
+              :img-attrs="{ class: 'absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0' }"
+              loading="lazy"
+              format="avif,webp"
+              quality="85"
+              sizes="xs:90vw sm:80vw md:450px lg:400px"
             />
 
             <div class="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent z-10 pointer-events-none" />
