@@ -56,7 +56,7 @@ const saveSelection = () => {
         <div class="flex items-center gap-3 mb-3">
           <div class="bg-blue-50 dark:bg-blue-900/30 p-2 rounded-xl text-blue-600 dark:text-blue-400">
             <UIcon
-              name="i-heroicons-shield-check-solid"
+              name="i-line-md-cookie-twotone"
               class="w-6 h-6"
             />
           </div>
