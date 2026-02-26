@@ -29,7 +29,7 @@ const scrollToSection = (id: string) => {
         sizes="100vw md:33vw lg:400px"
         fetchpriority="high"
       /> -->
-      <NuxtPicture
+      <!-- <NuxtPicture
         src="/hero.webp"
         alt="Service Auto Bragadiru Top Speed"
         :img-attrs="{
@@ -41,6 +41,20 @@ const scrollToSection = (id: string) => {
         quality="60"
         format="avif,webp"
         densities="x1 x2"
+      /> -->
+
+      <NuxtPicture
+        src="/hero.webp"
+        alt="Service Auto Bragadiru Top Speed"
+        :img-attrs="{
+          class: 'w-full h-full object-cover object-center md:object-[50%_40%]',
+          fetchpriority: 'high',
+          loading: 'eager'
+        }"
+        quality="50"
+        format="avif,webp"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw"
+        :discover="true"
       />
       <div class="absolute inset-0 bg-linear-to-b from-gray-100/80 via-gray-100/50 to-gray-100/80 md:bg-linear-to-r md:from-gray-100/90 md:via-gray-100/60 md:to-transparent dark:from-slate-950 dark:via-slate-950/90 dark:to-slate-950/40" />
     </div>
