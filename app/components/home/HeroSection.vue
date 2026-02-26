@@ -38,7 +38,7 @@ const scrollToSection = (id: string) => {
           loading: 'eager'
         }"
         sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw"
-        quality="80"
+        quality="60"
         format="avif,webp"
         densities="x1 x2"
       />

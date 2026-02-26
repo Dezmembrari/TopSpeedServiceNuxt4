@@ -25,23 +25,23 @@ export default defineNuxtConfig({
           as: 'image',
           href: '/_ipx/w_1280&f_avif&q_80/hero.webp',
           fetchpriority: 'high'
-        },
-        // 2. Preload Inter Bold (For your big H1 headings)
-        {
-          rel: 'preload',
-          as: 'font',
-          type: 'font/woff2',
-          href: '/_fonts/google-inter-700-normal.woff2', // Standard Nuxt Fonts path
-          crossorigin: 'anonymous'
-        },
-        // 3. Preload Inter Regular (For your body text)
-        {
-          rel: 'preload',
-          as: 'font',
-          type: 'font/woff2',
-          href: '/_fonts/google-inter-400-normal.woff2',
-          crossorigin: 'anonymous'
         }
+        // 2. Preload Inter Bold (For your big H1 headings)
+        // {
+        //   rel: 'preload',
+        //   as: 'font',
+        //   type: 'font/woff2',
+        //   href: '/_fonts/google-inter-700-normal.woff2', // Standard Nuxt Fonts path
+        //   crossorigin: 'anonymous'
+        // },
+        // // 3. Preload Inter Regular (For your body text)
+        // {
+        //   rel: 'preload',
+        //   as: 'font',
+        //   type: 'font/woff2',
+        //   href: '/_fonts/google-inter-400-normal.woff2',
+        //   crossorigin: 'anonymous'
+        // }
       ]
     }
   },
