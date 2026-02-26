@@ -32,13 +32,14 @@ const scrollToSection = (id: string) => {
       <NuxtPicture
         src="/hero.webp"
         alt="Service Auto Bragadiru Top Speed"
-        :img-attrs="{ class: 'w-full h-full object-cover object-center md:object-[50%_40%] transition-transform duration-[20s] hover:scale-105' }"
-        loading="eager"
-        fetchpriority="high"
-        preload
-        quality="60"
+        :img-attrs="{
+          class: 'w-full h-full object-cover object-center md:object-[50%_40%] transition-transform duration-[20s] hover:scale-105',
+          fetchpriority: 'high',
+          loading: 'eager'
+        }"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw"
+        quality="80"
         format="avif,webp"
-        sizes="300px xs:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
         densities="x1 x2"
       />
       <div class="absolute inset-0 bg-linear-to-b from-gray-100/80 via-gray-100/50 to-gray-100/80 md:bg-linear-to-r md:from-gray-100/90 md:via-gray-100/60 md:to-transparent dark:from-slate-950 dark:via-slate-950/90 dark:to-slate-950/40" />
