@@ -6,7 +6,7 @@ description: "Ai o daună la Groupama? Alege Top Speed Service Bragadiru. Decont
 
 # Funnel Variables
 insurerName: "Groupama"
-insurerLogo: "https://cdn.brandfetch.io/id4994uob8/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1769160580337"
+insurerLogo: "/images/asigurari/groupama.svg"
 themeColor: "green" # Groupama's brand color
 accentText: "Aprobat și Decontat Rapid"
 ---

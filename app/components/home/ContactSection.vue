@@ -129,7 +129,7 @@ const { trackLead } = useTracking()
               class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500"
               width="600"
               height="400"
-              format="webp"
+              format="avif"
               sizes="100vw md:50vw lg:300px"
               loading="lazy"
             />

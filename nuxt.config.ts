@@ -141,6 +141,13 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    zeroRuntime: true // Generate sitemap at build time without runtime overhead
+    zeroRuntime: true, // Generate sitemap at build time without runtime overhead
+    exclude: [
+      '/politica-de-confidentialitate',
+      '/termeni-si-conditii',
+      '/cookies',
+      '/sitemap.xml',
+      '/robots.txt'
+    ]
   }
 })

@@ -14,6 +14,14 @@ useHead({
   }
 })
 
+useSeoMeta({
+  ogType: 'website',
+  ogSiteName: 'Top Speed Service Auto',
+  ogImage: 'https://topspeedservice.eu/service.jpeg', // Make sure to add this image!
+  ogUrl: 'https://topspeedservice.eu',
+  twitterCard: 'summary_large_image'
+})
+
 useSchemaOrg([
   {
     '@type': ['AutoRepair', 'LocalBusiness'],

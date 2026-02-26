@@ -3,35 +3,35 @@ import { ref } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
 
 // const insurances = [
-//   { id: 'unica', name: 'Unica', logo: 'https://cdn.brandfetch.io/idxbFIJZjJ/w/820/h/280/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1719866192628' },
+//   // Reduced from 820x280 down to 205x70
+//   { id: 'unica', name: 'Unica', logo: 'https://cdn.brandfetch.io/idxbFIJZjJ/w/205/h/70/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1719866192628' },
+//   // Already small (243x66)
 //   { id: 'baar', name: 'BAAR Romania', logo: 'https://cdn.brandfetch.io/id06La4WjF/w/243/h/66/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1762891803155' },
+//   // SVGs scale infinitely and are naturally 2-5kb, so we leave them untouched
 //   { id: 'groupama', name: 'Groupama', logo: 'https://cdn.brandfetch.io/id4994uob8/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1769160580337' },
 //   { id: 'allianz', name: 'Allianz-Țiriac', logo: 'https://cdn.brandfetch.io/idyUFSjq7q/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667665868093' },
 //   { id: 'generali', name: 'Generali', logo: 'https://cdn.brandfetch.io/idv49vobo0/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1742876580673' },
 //   { id: 'grawe', name: 'Grawe', logo: 'https://cdn.brandfetch.io/idzfTQucSY/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1763645852906' },
 //   { id: 'omniasig', name: 'Omniasig', logo: 'https://cdn.brandfetch.io/idrtuyPDoR/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667853175572' },
+//   // Already small (196x67)
 //   { id: 'asirom', name: 'Asirom', logo: 'https://cdn.brandfetch.io/idzU_WZ3qX/w/196/h/67/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B' },
-//   { id: 'hellas', name: 'Hellas Direct', logo: 'https://cdn.brandfetch.io/idSmBVCcxu/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1762490618750' },
-//   { id: 'axeria', name: 'Axeria Iard', logo: 'https://cdn.brandfetch.io/ide08T7c0y/w/1996/h/884/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1763645922605' }
+//   // Reduced from 400x400 down to 120x120
+//   { id: 'hellas', name: 'Hellas Direct', logo: 'https://cdn.brandfetch.io/idSmBVCcxu/w/120/h/120/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1762490618750' },
+//   // THE BIG ONE: Reduced from 1996x884 down to 200x88!
+//   { id: 'axeria', name: 'Axeria Iard', logo: 'https://cdn.brandfetch.io/ide08T7c0y/w/200/h/88/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1763645922605' }
 // ]
 
 const insurances = [
-  // Reduced from 820x280 down to 205x70
-  { id: 'unica', name: 'Unica', logo: 'https://cdn.brandfetch.io/idxbFIJZjJ/w/205/h/70/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1719866192628' },
-  // Already small (243x66)
-  { id: 'baar', name: 'BAAR Romania', logo: 'https://cdn.brandfetch.io/id06La4WjF/w/243/h/66/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1762891803155' },
-  // SVGs scale infinitely and are naturally 2-5kb, so we leave them untouched
-  { id: 'groupama', name: 'Groupama', logo: 'https://cdn.brandfetch.io/id4994uob8/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1769160580337' },
-  { id: 'allianz', name: 'Allianz-Țiriac', logo: 'https://cdn.brandfetch.io/idyUFSjq7q/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667665868093' },
-  { id: 'generali', name: 'Generali', logo: 'https://cdn.brandfetch.io/idv49vobo0/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1742876580673' },
-  { id: 'grawe', name: 'Grawe', logo: 'https://cdn.brandfetch.io/idzfTQucSY/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1763645852906' },
-  { id: 'omniasig', name: 'Omniasig', logo: 'https://cdn.brandfetch.io/idrtuyPDoR/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667853175572' },
-  // Already small (196x67)
-  { id: 'asirom', name: 'Asirom', logo: 'https://cdn.brandfetch.io/idzU_WZ3qX/w/196/h/67/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B' },
-  // Reduced from 400x400 down to 120x120
-  { id: 'hellas', name: 'Hellas Direct', logo: 'https://cdn.brandfetch.io/idSmBVCcxu/w/120/h/120/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1762490618750' },
-  // THE BIG ONE: Reduced from 1996x884 down to 200x88!
-  { id: 'axeria', name: 'Axeria Iard', logo: 'https://cdn.brandfetch.io/ide08T7c0y/w/200/h/88/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1763645922605' }
+  { id: 'unica', name: 'Unica', logo: '/images/asigurari/unica.png' },
+  { id: 'baar', name: 'BAAR Romania', logo: '/images/asigurari/baar.png' },
+  { id: 'groupama', name: 'Groupama', logo: '/images/asigurari/groupama.svg' },
+  { id: 'allianz', name: 'Allianz-Țiriac', logo: '/images/asigurari/allianz.svg' },
+  { id: 'generali', name: 'Generali', logo: '/images/asigurari/generali.svg' },
+  { id: 'grawe', name: 'Grawe', logo: '/images/asigurari/grawe.svg' },
+  { id: 'omniasig', name: 'Omniasig', logo: '/images/asigurari/omniasig.svg' },
+  { id: 'asirom', name: 'Asirom', logo: '/images/asigurari/asirom.png' },
+  { id: 'hellas', name: 'Hellas Direct', logo: '/images/asigurari/hellas.jpeg' },
+  { id: 'axeria', name: 'Axeria Iard', logo: '/images/asigurari/axeria.png' }
 ]
 
 const benefits = [
@@ -180,7 +180,7 @@ const { trackLead } = useTracking()
                     />
                   </div>
 
-                  <NuxtImg
+                  <!-- <NuxtImg
                     :src="insurance.logo"
                     :alt="`Siglă asigurare ${insurance.name}`"
                     width="120"
@@ -194,8 +194,48 @@ const { trackLead } = useTracking()
                       'brightness-0': insurance.id === 'axeria' || insurance.id === 'unica'
                     }"
                     loading="lazy"
-                    format="webp"
+                    format="avif"
                     quality="80"
+                    @load="onImageLoad(insurance.id)"
+                  /> -->
+
+                  <!-- <NuxtImg
+                    :src="insurance.logo"
+                    :alt="`Siglă asigurare ${insurance.name}`"
+                    class="w-full h-full object-contain p-3 transition-transform opacity-100 duration-500 relative z-10 group-hover:scale-110 pointer-events-none"
+                    :class="{
+                      'opacity-0': !loadedImages[insurance.id],
+                      'opacity-100': loadedImages[insurance.id],
+                      'scale-75 group-hover:scale-90': insurance.id === 'hellas',
+                      'brightness-0': insurance.id === 'axeria' || insurance.id === 'unica'
+                    }"
+                    loading="lazy"
+                    format="avif"
+                    quality="90"
+                    fit="contain"
+                    @load="onImageLoad(insurance.id)"
+                  /> -->
+
+                  <NuxtImg
+                    :src="insurance.logo"
+                    :alt="`Siglă asigurare ${insurance.name}`"
+                    class="object-contain transition-transform duration-500 relative z-10 group-hover:scale-110 pointer-events-none"
+                    :class="{
+                      'opacity-0': !loadedImages[insurance.id],
+                      'opacity-100': loadedImages[insurance.id],
+                      /* 1. WIDE LOGOS: Give them 92% of the width so they stretch edge-to-edge on mobile */
+                      'max-w-[92%] max-h-[75%]': insurance.id === 'baar' || insurance.id === 'axeria' || insurance.id === 'asirom',
+                      /* 2. SQUARE LOGOS: Contain to 75% so they don't blow out the height */
+                      'max-w-[75%] max-h-[75%]': insurance.id === 'hellas',
+                      /* 3. STANDARD LOGOS: A balanced 85% */
+                      'max-w-[85%] max-h-[80%]': !['baar', 'axeria', 'asirom', 'hellas'].includes(insurance.id),
+                      /* Filters */
+                      'brightness-0': insurance.id === 'axeria' || insurance.id === 'unica'
+                    }"
+                    loading="lazy"
+                    format="avif"
+                    quality="90"
+                    fit="contain"
                     @load="onImageLoad(insurance.id)"
                   />
                 </template>

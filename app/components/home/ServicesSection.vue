@@ -66,7 +66,7 @@ const scrollToContact = () => {
               :alt="service.alt"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               loading="lazy"
-              format="webp"
+              format="avif"
               quality="80"
               sizes="90vw md:33vw lg:400px"
             />

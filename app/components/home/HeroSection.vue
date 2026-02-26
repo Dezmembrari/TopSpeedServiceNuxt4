@@ -25,7 +25,7 @@ const scrollToSection = (id: string) => {
         class="w-full h-full object-cover object-center md:object-[50%_40%] transition-transform duration-[20s] hover:scale-105"
         loading="eager"
         quality="65"
-        format="webp"
+        format="avif"
         sizes="100vw md:33vw lg:400px"
         fetchpriority="high"
       /> -->
