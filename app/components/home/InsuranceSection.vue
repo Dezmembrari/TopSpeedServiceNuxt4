@@ -257,7 +257,7 @@ const { trackLead } = useTracking()
                     }"
                     loading="lazy"
                     format="avif,webp"
-                    quality="90"
+                    quality="50"
                     fit="contain"
                     @load="onImageLoad(insurance.id)"
                   />

@@ -145,7 +145,7 @@ onUnmounted(() => {
               :img-attrs="{ class: 'absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 z-0' }"
               loading="lazy"
               format="avif,webp"
-              quality="85"
+              quality="40"
               sizes="xs:90vw sm:80vw md:450px lg:400px"
             />
 
