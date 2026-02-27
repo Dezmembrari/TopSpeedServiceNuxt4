@@ -36,31 +36,70 @@ const scrollToContact = () => {
 const carouselRef = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
 
+// onMounted(() => {
+//   observer = new IntersectionObserver((entries) => {
+//     if (entries[0] && entries[0].isIntersecting) {
+//       const el = carouselRef.value
+
+//       if (el && window.innerWidth < 1024) {
+//         setTimeout(() => {
+//           el.classList.remove('snap-x', 'snap-mandatory')
+//           el.scrollBy({ left: 90, behavior: 'smooth' })
+
+//           setTimeout(() => {
+//             el.scrollBy({ left: -90, behavior: 'smooth' })
+//             setTimeout(() => {
+//               el.scrollBy({ left: 40, behavior: 'smooth' })
+//               setTimeout(() => {
+//                 el.scrollBy({ left: -40, behavior: 'smooth' })
+//                 setTimeout(() => {
+//                   el.classList.add('snap-x', 'snap-mandatory')
+//                 }, 250)
+//               }, 150)
+//             }, 200)
+//           }, 200)
+//         }, 250)
+//       }
+
+//       observer?.disconnect()
+//     }
+//   }, { threshold: 0.4 })
+
+//   if (carouselRef.value) {
+//     observer.observe(carouselRef.value)
+//   }
+// })
+
 onMounted(() => {
   observer = new IntersectionObserver((entries) => {
     if (entries[0] && entries[0].isIntersecting) {
       const el = carouselRef.value
 
-      if (el && window.innerWidth < 1024) {
-        setTimeout(() => {
-          el.classList.remove('snap-x', 'snap-mandatory')
-          el.scrollBy({ left: 90, behavior: 'smooth' })
+      // Folosim matchMedia în loc de innerWidth pentru a preveni "Forced Reflow"
+      const isMobile = window.matchMedia('(max-width: 1023px)').matches
 
+      if (el && isMobile) {
+        // requestAnimationFrame aliniază codul cu ciclul de desenare al browserului
+        requestAnimationFrame(() => {
           setTimeout(() => {
-            el.scrollBy({ left: -90, behavior: 'smooth' })
-            setTimeout(() => {
-              el.scrollBy({ left: 40, behavior: 'smooth' })
-              setTimeout(() => {
-                el.scrollBy({ left: -40, behavior: 'smooth' })
-                setTimeout(() => {
-                  el.classList.add('snap-x', 'snap-mandatory')
-                }, 250)
-              }, 150)
-            }, 200)
-          }, 200)
-        }, 250)
-      }
+            el.classList.remove('snap-x', 'snap-mandatory')
+            el.scrollBy({ left: 90, behavior: 'smooth' })
 
+            setTimeout(() => {
+              el.scrollBy({ left: -90, behavior: 'smooth' })
+              setTimeout(() => {
+                el.scrollBy({ left: 40, behavior: 'smooth' })
+                setTimeout(() => {
+                  el.scrollBy({ left: -40, behavior: 'smooth' })
+                  setTimeout(() => {
+                    el.classList.add('snap-x', 'snap-mandatory')
+                  }, 250)
+                }, 150)
+              }, 200)
+            }, 200)
+          }, 250)
+        })
+      }
       observer?.disconnect()
     }
   }, { threshold: 0.4 })
