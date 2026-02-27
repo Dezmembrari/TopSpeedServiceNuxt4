@@ -77,8 +77,8 @@ useHead({
         >
           Ai o daună auto în <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500 dark:from-blue-500 dark:to-blue-300">
             {{ page.cityName }}
-          </span>?<br class="hidden md:block">
-          <span class="text-3xl md:text-5xl lg:text-5xl text-gray-600 dark:text-gray-400">
+          </span>?
+          <span class="block mt-3 md:mt-4 text-3xl md:text-5xl lg:text-5xl text-gray-600 dark:text-gray-400">
             Service cu decontare la {{ page.driveTime }} distanță.
           </span>
         </h1>
