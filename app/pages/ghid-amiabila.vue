@@ -1,6 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Cum completezi Constatarea Amiabilă Auto (Ghid Pas cu Pas)',
+  title: 'Constatare Amiabilă Auto: Cum se completează corect',
+  titleTemplate: null,
   description: 'Ai fost implicat într-un accident ușor? Află cum să completezi corect formularul de constatare amiabilă pentru a evita respingerea dosarului.',
   ogTitle: 'Ghid Completare Constatare Amiabilă | Top Speed Service',
   ogDescription: 'Evită greșelile care blochează dosarul de daună. Urmează ghidul nostru pas cu pas.'

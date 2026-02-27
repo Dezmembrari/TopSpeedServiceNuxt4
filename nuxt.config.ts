@@ -66,6 +66,8 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/asigurari/**': { prerender: true },
+    '/locatii/**': { prerender: true },
     // Cache all public images for one year (immutable) -- STATIC FILES ONLY, NOT DYNAMICALLY GENERATED ON THE FLY
     '/**/*.{png,jpg,jpeg,svg,gif,webp,avif,ico}': {
       headers: {

@@ -2,9 +2,9 @@
 useSeoMeta({
   title: 'Mașină la Schimb Gratuită București/Ilfov | Top Speed Service',
   titleTemplate: null,
-  description: 'Ai fost lovit în trafic? Repară mașina pe RCA-ul vinovatului la Top Speed Service și primești o mașină la schimb gratuită, fără reclame pe ea, pe toată durata reparației.',
+  description: 'Ai mașina avariată? Repară pe RCA la Top Speed Service Bragadiru și primești o mașină la schimb gratuită, pe toată durata reparației.',
   ogTitle: 'Mașină la Schimb Gratuită pe RCA | Top Speed Service',
-  ogDescription: 'Nu rămâne pieton. Îți oferim mașină de înlocuire gratuită, elegantă și fără reclame colantate, decontată direct de asigurator.',
+  ogDescription: 'Ai mașina avariată? Repară pe RCA la Top Speed Service Bragadiru și primești o mașină la schimb gratuită, pe toată durata reparației.',
   ogImage: '/images/og-masina-schimb.jpg'
 })
 

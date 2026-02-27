@@ -3,7 +3,7 @@
 useSeoMeta({
   title: 'Service Autorizat RAR & Constatări Daune Top Speed Service', // This has 59 characters, which is optimal for SEO
   titleTemplate: null,
-  description: 'Service auto complet în Bragadiru: vopsitorie, tinichigerie, mecanică și centru de daune.',
+  description: 'Service auto premium în Bragadiru: vopsitorie, tinichigerie și mecanică. Oferim constatare daune, decontare RCA/CASCO, tractare și mașină la schimb gratuită.',
   ogTitle: 'Top Speed Service Bragadiru - Service Auto și Centru Daune',
   ogImage: 'https://topspeedservice.eu/hero.webp',
   twitterCard: 'summary_large_image'
