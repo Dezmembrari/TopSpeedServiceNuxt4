@@ -80,7 +80,7 @@ const scrollToSection = (id: string) => {
           {{ statusText }}
         </div>
 
-        <div class="space-y-2 md:space-y-4">
+        <!-- <div class="space-y-2 md:space-y-4">
           <h2 class="text-blue-700 font-extrabold tracking-wide uppercase text-lg md:text-2xl">
             Centru Constatare Daune
           </h2>
@@ -88,10 +88,30 @@ const scrollToSection = (id: string) => {
             SERVICE <span class="bg-linear-to-r from-green-700 to-green-500 bg-clip-text text-transparent">AUTO</span><br>
             COMPLET
           </h1>
+        </div> -->
+
+        <!-- <div class="space-y-2 md:space-y-4">
+          <h2 class="text-blue-700 dark:text-blue-400 font-extrabold tracking-wide uppercase text-lg md:text-2xl">
+            Service Auto Premium Bragadiru
+          </h2>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter leading-[1.1]">
+            CENTRU <span class="bg-linear-to-r from-green-700 to-green-500 bg-clip-text text-transparent">DAUNE</span><br>
+            & MECANICĂ
+          </h1>
+        </div> -->
+
+        <div class="space-y-2 md:space-y-4">
+          <h2 class="text-blue-700 dark:text-blue-400 font-extrabold tracking-wide uppercase text-lg md:text-2xl">
+            Centru Daune & Decontare RCA autorizat RAR
+          </h2>
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter leading-[1.1]">
+            SERVICE <span class="bg-linear-to-r from-green-700 to-green-500 bg-clip-text text-transparent">AUTO</span><br>
+            BRAGADIRU
+          </h1>
         </div>
 
         <p class="text-xl md:text-2xl text-gray-800 dark:text-gray-200 max-w-lg leading-relaxed px-2 md:px-0 font-medium">
-          Transformăm accidentele în experiențe simple. Oferim
+          Service auto autorizat RAR în Bragadiru. Transformăm accidentele în experiențe simple. Oferim
           <strong class="text-blue-700 dark:text-[#4facfe] underline decoration-green-700 decoration-2 underline-offset-2">mașină la schimb</strong> și
           <strong class="text-blue-700 dark:text-[#4facfe] underline decoration-green-700 decoration-2 underline-offset-2">tractare gratuită</strong>.
         </p>
