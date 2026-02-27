@@ -1,9 +1,9 @@
 ---
 # SEO & Meta //| Decontare Directă | Constatare Daune Groupama
-title: "Reparații Daune Auto Groupama Bragadiru | Mașină la Schimb" 
+# title: "Reparații Daune Auto Groupama Bragadiru | Mașină la Schimb" 
 # description: "Ai o daună auto acoperită de Groupama? Oferim reparații cu decontare directă, mașină la schimb gratuită și asistență la deschiderea dosarului în Bragadiru."
-description: "Ai o daună la Groupama? Alege Top Speed Service Bragadiru. Decontare directă, reparație cu piese originale și mașină la schimb gratuită pe loc. Sună acum!"
-
+title: "Daune Groupama Bragadiru | Decontare RCA și CASCO"
+description: "Ai o daună Groupama? Alege Top Speed Service Bragadiru. Constatare, decontare directă RCA/CASCO, reparație premium și mașină la schimb pe loc."
 # Funnel Variables
 insurerName: "Groupama"
 insurerLogo: "/images/asigurari/groupama.svg"

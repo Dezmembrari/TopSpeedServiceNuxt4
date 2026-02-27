@@ -57,7 +57,7 @@ useHead({
           </div>
         </div>
 
-        <h1
+        <!-- <h1
           class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] mb-8 animate-fade-in-up drop-shadow-sm"
           style="animation-delay: 0.1s;"
         >
@@ -65,6 +65,22 @@ useHead({
           <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500 dark:from-blue-500 dark:to-blue-300">
             {{ page.driveTime }}
           </span> de tine.
+        </h1> -->
+
+        <h2 class="text-xs md:text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 animate-fade-in-up">
+          Constatare Daune, Decontare RCA și Service Auto
+        </h2>
+
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] mb-8 animate-fade-in-up drop-shadow-sm"
+          style="animation-delay: 0.1s;"
+        >
+          Ai o daună auto în <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-700 to-blue-500 dark:from-blue-500 dark:to-blue-300">
+            {{ page.cityName }}
+          </span>?<br class="hidden md:block">
+          <span class="text-3xl md:text-5xl lg:text-5xl text-gray-600 dark:text-gray-400">
+            Service cu decontare la {{ page.driveTime }} distanță.
+          </span>
         </h1>
 
         <p
@@ -180,8 +196,12 @@ useHead({
       <UContainer class="max-w-6xl">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div class="space-y-8 relative z-10">
-            <h2 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight">
+            <!-- <h2 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight">
               De ce să vii din <span class="text-blue-700 dark:text-blue-500">{{ page.cityName }}</span> până la noi?
+            </h2> -->
+
+            <h2 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight">
+              De ce să vii din <span class="text-blue-700 dark:text-blue-500">{{ page.cityName }}</span> până la centrul nostru din Bragadiru?
             </h2>
             <p class="text-lg text-gray-700 dark:text-gray-400 font-medium">
               Pentru că știm cât de stresant este un accident. Nu trebuie să cauți disperat un service de cartier înghesuit. Îți oferim o experiență premium, spațiu, echipamente de top și mobilitate.

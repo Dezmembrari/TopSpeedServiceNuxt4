@@ -164,7 +164,7 @@ useHead({
           </div>
         </div>
 
-        <h1
+        <!-- <h1
           class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.05] mb-8 animate-fade-in-up drop-shadow-sm"
           style="animation-delay: 0.2s;"
         >
@@ -177,6 +177,25 @@ useHead({
               {{ page.insurerName }}
             </span>
           </span>?
+        </h1> -->
+
+        <h2 class="text-sm md:text-base font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 animate-fade-in-up">
+          Service Auto Constatare și Decontare Directă Bragadiru
+        </h2>
+
+        <h1
+          class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.05] mb-8 animate-fade-in-up drop-shadow-sm"
+          style="animation-delay: 0.2s;"
+        >
+          Reparații Daune <span class="relative inline-block mt-2 md:mt-0">
+            <span class="absolute inset-x-0 bottom-2 h-1/3 bg-gray-200 dark:bg-slate-800 -skew-x-6 -z-10" />
+            <span
+              class="bg-linear-to-r bg-clip-text text-transparent"
+              :class="brandGradient"
+            >
+              {{ page.insurerName }}
+            </span>
+          </span>
         </h1>
 
         <p

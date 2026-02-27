@@ -1,6 +1,8 @@
 ---
-title: "Service Auto Daune Unica Bragadiru | Decontare Directă"
-description: "Ai o daună auto acoperită de Unica? Service autorizat RAR în Bragadiru. Decontare directă, reparații cu piese de origine și mașină la schimb gratuită."
+# title: "Service Auto Daune Unica Bragadiru | Decontare Directă"
+# description: "Ai o daună auto acoperită de Unica? Service autorizat RAR în Bragadiru. Decontare directă, reparații cu piese de origine și mașină la schimb gratuită."
+title: "Service Daune Unica Bragadiru | Decontare RCA/CASCO"
+description: "Ai o daună auto Unica? Service autorizat în Bragadiru pentru constatare rapidă, reparații cu decontare directă și mașină la schimb gratuită."
 insurerName: "Unica"
 insurerLogo: "/images/asigurari/unica.png"
 themeColor: "blue"
