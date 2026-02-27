@@ -19,16 +19,16 @@ const scrollToSection = (id: string) => {
         height="1125"
         densities="x1 x2"
         sizes="100vw sm:100vw md:100vw lg:1920px" -->
-      <!-- <NuxtPicture
+      <NuxtImg
         src="/hero.webp"
         alt="Service Auto Bragadiru Top Speed"
-        class="w-full h-full object-cover object-center md:object-[50%_40%] transition-transform duration-[20s] hover:scale-105"
+        class="w-full h-full object-cover object-center md:object-[50%_40%]"
         loading="eager"
-        quality="65"
-        format="avif"
-        sizes="100vw md:33vw lg:400px"
+        quality="50"
+        format="webp"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw"
         fetchpriority="high"
-      /> -->
+      />
       <!-- <NuxtPicture
         src="/hero.webp"
         alt="Service Auto Bragadiru Top Speed"
@@ -43,7 +43,7 @@ const scrollToSection = (id: string) => {
         densities="x1 x2"
       /> -->
 
-      <NuxtPicture
+      <!-- <NuxtPicture
         src="/hero.webp"
         alt="Service Auto Bragadiru Top Speed"
         :img-attrs="{
@@ -55,7 +55,7 @@ const scrollToSection = (id: string) => {
         format="avif,webp"
         sizes="xs:100vw sm:100vw md:100vw lg:100vw"
         :discover="true"
-      />
+      /> -->
       <div class="absolute inset-0 bg-linear-to-b from-gray-100/80 via-gray-100/50 to-gray-100/80 md:bg-linear-to-r md:from-gray-100/90 md:via-gray-100/60 md:to-transparent dark:from-slate-950 dark:via-slate-950/90 dark:to-slate-950/40" />
     </div>
 

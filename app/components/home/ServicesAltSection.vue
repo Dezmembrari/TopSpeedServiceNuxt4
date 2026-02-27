@@ -83,7 +83,8 @@ onUnmounted(() => {
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
       <div class="absolute top-[60%] md:top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] md:w-[90%] h-87.5 md:h-112.5">
         <!-- <div class="absolute inset-0 bg-linear-to-r from-blue-500/30 via-teal-400/20 to-green-500/30 dark:from-blue-600/15 dark:via-teal-500/10 dark:to-green-600/15 blur-[100px] md:blur-[130px] rounded-[100%] animate-slow-breathe" /> -->
-        <div class="absolute inset-0 bg-linear-to-r from-blue-500/30 via-teal-400/20 to-green-500/30 dark:from-blue-600/15 dark:via-teal-500/10 dark:to-green-600/15 blur-2xl md:blur-[130px] rounded-[100%] lg:animate-slow-breathe will-change-transform" />
+        <!-- <div class="absolute inset-0 bg-linear-to-r from-blue-500/30 via-teal-400/20 to-green-500/30 dark:from-blue-600/15 dark:via-teal-500/10 dark:to-green-600/15 blur-2xl md:blur-[130px] rounded-[100%] lg:animate-slow-breathe will-change-transform" /> -->
+        <div class="hidden md:block absolute inset-0 bg-linear-to-r from-blue-500/30 via-teal-400/20 to-green-500/30 dark:from-blue-600/15 dark:via-teal-500/10 dark:to-green-600/15 md:blur-[130px] rounded-[100%] lg:animate-slow-breathe will-change-transform" />
       </div>
     </div>
 

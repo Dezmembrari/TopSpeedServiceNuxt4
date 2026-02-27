@@ -7,7 +7,7 @@
     <slot />
 
     <footer>
-      <Navigation_footer />
+      <LazyNavigation_footer />
     </footer>
   </div>
 </template>
