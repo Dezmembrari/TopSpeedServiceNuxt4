@@ -172,6 +172,29 @@ export default defineNuxtConfig({
     }
   },
 
+  robots: {
+    // This tells the module to explicitly invite AI bots
+    groups: [
+      {
+        userAgent: ['*'],
+        allow: ['/']
+      },
+      {
+        // Explicitly whitelist the major AI agents
+        userAgent: [
+          'GPTBot', // OpenAI / ChatGPT
+          'ChatGPT-User', // ChatGPT Web Browsing
+          'ClaudeBot', // Anthropic / Claude
+          'PerplexityBot', // Perplexity AI
+          'Google-Extended', // Google Gemini Training
+          'anthropic-ai',
+          'OAI-SearchBot' // OpenAI Search
+        ],
+        allow: ['/']
+      }
+    ]
+  },
+
   sitemap: {
     zeroRuntime: true, // Generate sitemap at build time without runtime overhead
     exclude: [
@@ -185,4 +208,5 @@ export default defineNuxtConfig({
       '/documents/formular-constatare-amiabila.pdf'
     ]
   }
+
 })
