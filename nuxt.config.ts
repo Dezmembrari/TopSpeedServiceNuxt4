@@ -177,7 +177,10 @@ export default defineNuxtConfig({
       '/termeni-si-conditii',
       '/cookies',
       '/sitemap.xml',
-      '/robots.txt'
+      '/robots.txt',
+      '/404',
+      '/500',
+      '/documents/formular-constatare-amiabila.pdf'
     ]
   }
 })

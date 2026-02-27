@@ -82,15 +82,16 @@ onUnmounted(() => {
   >
     <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
       <div class="absolute top-[60%] md:top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] md:w-[90%] h-87.5 md:h-112.5">
-        <div class="absolute inset-0 bg-linear-to-r from-blue-500/30 via-teal-400/20 to-green-500/30 dark:from-blue-600/15 dark:via-teal-500/10 dark:to-green-600/15 blur-[100px] md:blur-[130px] rounded-[100%] animate-slow-breathe" />
+        <!-- <div class="absolute inset-0 bg-linear-to-r from-blue-500/30 via-teal-400/20 to-green-500/30 dark:from-blue-600/15 dark:via-teal-500/10 dark:to-green-600/15 blur-[100px] md:blur-[130px] rounded-[100%] animate-slow-breathe" /> -->
+        <div class="absolute inset-0 bg-linear-to-r from-blue-500/30 via-teal-400/20 to-green-500/30 dark:from-blue-600/15 dark:via-teal-500/10 dark:to-green-600/15 blur-2xl md:blur-[130px] rounded-[100%] lg:animate-slow-breathe will-change-transform" />
       </div>
     </div>
 
     <UContainer class="relative z-10">
       <div class="text-center max-w-4xl mx-auto mb-12 lg:mb-20 px-4">
         <div class="relative inline-block mb-6 group">
-          <div class="absolute -inset-1.5 bg-linear-to-r from-green-400 via-blue-400 to-green-500 rounded-full blur-md opacity-100 dark:opacity-70 animate-moving-glow z-0" />
-
+          <!-- <div class="absolute -inset-1.5 bg-linear-to-r from-green-400 via-blue-400 to-green-500 rounded-full blur-md opacity-100 dark:opacity-70 animate-moving-glow z-0" /> -->
+          <div class="absolute -inset-1.5 bg-linear-to-r from-green-400 via-blue-400 to-green-500 rounded-full blur-md opacity-100 dark:opacity-70 lg:animate-moving-glow z-0" />
           <div class="relative z-10 inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-white/60 dark:border-green-600/50 bg-white/95 dark:bg-green-900/80 shadow-xl backdrop-blur-md">
             <span class="text-sm md:text-base font-black text-green-700 dark:text-green-400 uppercase tracking-widest">
               Gratuit prin Asigurare

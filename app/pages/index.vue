@@ -1,7 +1,8 @@
 <script setup lang="ts">
 // SEO & Meta
 useSeoMeta({
-  title: 'Service Auto Autorizat RAR & Constatări Daune',
+  title: 'Service Autorizat RAR & Constatări Daune Top Speed Service', // This has 59 characters, which is optimal for SEO
+  titleTemplate: null,
   description: 'Service auto complet în Bragadiru: vopsitorie, tinichigerie, mecanică și centru de daune.',
   ogTitle: 'Top Speed Service Bragadiru - Service Auto și Centru Daune',
   ogImage: 'https://topspeedservice.eu/hero.webp',

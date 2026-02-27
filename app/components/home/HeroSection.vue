@@ -60,7 +60,7 @@ const scrollToSection = (id: string) => {
     </div>
 
     <div class="relative z-10 w-full px-4 md:px-12 grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-      <div class="col-span-12 md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:space-y-8 animate-fade-in-up">
+      <div class="col-span-12 md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left space-y-6 md:space-y-8 animate-fade-in-up will-change-transform">
         <div
           class="inline-flex items-center gap-2 px-4 py-2 rounded-full font-bold text-sm shadow-sm backdrop-blur-md border transition-colors duration-300"
           :class="isOpen

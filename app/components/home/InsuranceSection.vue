@@ -318,7 +318,7 @@ const { trackLead } = useTracking()
   opacity: 0;
 }
 
-/* More aggressive, tighter double-tap to catch fast scrollers */
+/* More aggressive, tighter double-tap to catch fast scrollers
 @keyframes hintHeartbeat {
   0% {
     transform: scale(1) translateY(0);
@@ -326,8 +326,8 @@ const { trackLead } = useTracking()
     border-color: inherit;
   }
   8% {
-    transform: scale(1.08) translateY(-5px); /* Bigger pop */
-    box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.5); /* Brighter glow */
+    transform: scale(1.08) translateY(-5px);  Bigger pop
+    box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.5);  Brighter glow
     border-color: rgba(59, 130, 246, 0.8);
   }
   16% {
@@ -336,7 +336,7 @@ const { trackLead } = useTracking()
     border-color: inherit;
   }
   24% {
-    transform: scale(1.04) translateY(-2px); /* Secondary pop */
+    transform: scale(1.04) translateY(-2px);  Secondary pop
     box-shadow: 0 8px 20px -5px rgba(59, 130, 246, 0.4);
     border-color: rgba(59, 130, 246, 0.6);
   }
@@ -350,5 +350,14 @@ const { trackLead } = useTracking()
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
     border-color: inherit;
   }
+} */
+
+ @keyframes hintHeartbeat {
+  0% { transform: scale(1) translateY(0); }
+  8% { transform: scale(1.08) translateY(-5px); }
+  16% { transform: scale(1) translateY(0); }
+  24% { transform: scale(1.04) translateY(-2px); }
+  32% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1) translateY(0); }
 }
 </style>
