@@ -78,7 +78,14 @@ export default defineNuxtConfig({
     // This fixes the "Serve static assets with an efficient cache policy" error -- files served by Nitro's image optimization endpoint should also be cached aggressively
     '/_ipx/**': {
       headers: { 'cache-control': 'public, max-age=31536000, immutable' }
-    }
+    },
+
+    // Redirecționări 301 (Permanent Redirect) pentru SEO
+    '/privacy': { redirect: { to: '/politica-de-confidentialitate', statusCode: 301 } },
+    '/cookies': { redirect: { to: '/termeni-si-conditii', statusCode: 301 } },
+    '/despre_noi': { redirect: { to: '/#despre-noi', statusCode: 301 } },
+    '/servicii': { redirect: { to: '/#services', statusCode: 301 } },
+    '/contact': { redirect: { to: '/#contact', statusCode: 301 } }
   },
 
   features: {
