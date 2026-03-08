@@ -27,38 +27,40 @@
     Huge selling point being that we give clients elegant cars, that don't have the name of the business written all over it like other competitors that use the cars as a huge
     opportunity to market their repair shop, we offer cars without branding all over it. It doesn't scream "hey i just got in an accident" -->
 
-3. B2B / Flote Auto (/servicii-flote)
-
-    Why you need it: B2C (regular drivers) brings you one car. B2B (local delivery companies, real estate agents, sales teams) brings you 10 to 50 cars.
-
-    The Funnel Play: A page speaking directly to business owners. Keywords: Prioritate la reparații, facturare centralizată, mentenanță preventivă. A business owner's biggest fear is a car sitting idle, losing money. Promise them speed.
-
 <!-- 4. About Us / Echipa Noastră (/despre-noi)
 
     Why you need it: The auto repair industry suffers from a massive lack of trust (fear of being scammed, fake parts, joyrides).
 
     The Funnel Play: Show photos of the owner, the lead mechanic, the clean garage floor, and the waiting room (if you have a nice coffee area). A clean shop with smiling humans builds instant trust over a faceless corporate website. -->
 
-Dedicated Service Pages (/servicii/tinichigerie, /servicii/vopsitorie)
-
-"Constatare Online" Funnel (Photo upload & fast quote form) ?
-
-Interactive "Before & After" Slider Component
-
-Google Reviews "Wall of Love" Component
-
-"Facilități & Echipamente" (About Us / Our Shop) Page
-
-JSON-LD Schema Markup Integration (LocalBusiness, AutoRepair, FAQ)
+<!-- JSON-LD Schema Markup Integration (LocalBusiness, AutoRepair, FAQ) -->
 
 <!-- Strategic Custom 404 Error Page (error.vue) -->
 
 <!-- Location-Based SEO Landing Pages (Sector 5, Sector 6, Ilfov) -->
 
-If you write a genuinely helpful step-by-step guide on how to navigate a hit-and-run in Romania, other local sites, Facebook groups, and Reddit users will link to it. Those backlinks act like rocket fuel for your main pages (like your Homepage and Service Pages), pushing them to #1. maybe what to do incase show fell on your car from on top of block, town hall visit --> service? or any other Ghiduri si Resurse Auto as funnels
+<!-- Location-Based Dynamic Pages (Targeting Sector 5, Sector 6, and Ilfov). -->
 
-Nuxt i18n Module Implementation (English version for the Expat market).
+<!-- redirect all old /pages from website to the new locations/page tags# ![alt text](image.png) -->
 
-"Ghiduri & Resurse Auto" (The SEO Knowledge Base / AI Information Gain).
+1. B2B / Flote Auto (/servicii-flote)
 
-Location-Based Dynamic Pages (Targeting Sector 5, Sector 6, and Ilfov).
+    Why you need it: B2C (regular drivers) brings you one car. B2B (local delivery companies, real estate agents, sales teams) brings you 10 to 50 cars.
+
+    The Funnel Play: A page speaking directly to business owners. Keywords: Prioritate la reparații, facturare centralizată, mentenanță preventivă. A business owner's biggest fear is a car sitting idle, losing money. Promise them speed.
+
+2. Dedicated Service Pages (/servicii/tinichigerie, /servicii/vopsitorie)
+
+3. "Constatare Online" Funnel (Photo upload & fast quote form) ?
+
+4. Interactive "Before & After" Slider Component
+
+5. Google Reviews "Wall of Love" Component
+
+6. "Facilități & Echipamente" (About Us / Our Shop) Page
+
+7. If you write a genuinely helpful step-by-step guide on how to navigate a hit-and-run in Romania, other local sites, Facebook groups, and Reddit users will link to it. Those backlinks act like rocket fuel for your main pages (like your Homepage and Service Pages), pushing them to #1. maybe what to do incase show fell on your car from on top of block, town hall visit --> service? or any other Ghiduri si Resurse Auto as funnels
+
+8. Nuxt i18n Module Implementation (English version for the Expat market).
+
+9. "Ghiduri & Resurse Auto" (The SEO Knowledge Base / AI Information Gain).

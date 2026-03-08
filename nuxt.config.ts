@@ -65,9 +65,10 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { prerender: true },
-    '/asigurari/**': { prerender: true },
-    '/locatii/**': { prerender: true },
+    '/': { swr: true },
+    '/asigurari/**': { swr: true },
+    '/locatii/**': { swr: true },
+    '/servicii/**': { swr: true },
     // Cache all public images for one year (immutable) -- STATIC FILES ONLY, NOT DYNAMICALLY GENERATED ON THE FLY
     '/**/*.{png,jpg,jpeg,svg,gif,webp,avif,ico}': {
       headers: {
@@ -103,7 +104,7 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      crawlLinks: false,
+      crawlLinks: true, // Automatically discover and prerender linked pages
       concurrency: 10, // Speeds up the process on multi-core CPUs
       // FIX 2: Tell Nitro NOT to try saving image files to disk during build
       // This prevents the Windows "https:" filename error
