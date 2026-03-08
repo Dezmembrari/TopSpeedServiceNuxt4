@@ -201,7 +201,7 @@ const { trackLead } = useTracking()
               >
             </a>
             <a
-              href="https://ec.europa.eu/consumers/odr"
+              href="https://consumer-redress.ec.europa.eu/index_ro"
               target="_blank"
               rel="noopener nofollow"
               class="block w-40 hover:opacity-80 transition-opacity"
