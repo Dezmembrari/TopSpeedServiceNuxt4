@@ -108,7 +108,8 @@ export default defineNuxtConfig({
       concurrency: 10, // Speeds up the process on multi-core CPUs
       // FIX 2: Tell Nitro NOT to try saving image files to disk during build
       // This prevents the Windows "https:" filename error
-      ignore: ['/_ipx'],
+      ignore: ['/_ipx', '/_payload.js', '/_payload.json'],
+      failOnError: false, // Don't fail the build if a route fails to prerender (useful for dynamic routes)
       routes: ['/sitemap.xml', '/robots.txt', '/'] // Pre-render these routes for better SEO and performance
     }
   },
