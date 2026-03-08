@@ -65,7 +65,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { swr: true },
+    '/': { prerender: true },
     '/asigurari/**': { swr: true },
     '/locatii/**': { swr: true },
     '/servicii/**': { swr: true },
