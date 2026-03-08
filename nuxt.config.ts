@@ -95,8 +95,8 @@ export default defineNuxtConfig({
 
   // Enable experimental payload extraction for faster hydration
   experimental: {
-    // payloadExtraction: false, // Reduces JS execution time on true, but may cause issues with some dynamic content
-    renderJsonPayloads: false, // Speeds up hydration on true, but may break some features that rely on the full payload
+    payloadExtraction: true, // Reduces JS execution time on true, but may cause issues with some dynamic content
+    renderJsonPayloads: true, // Speeds up hydration on true, but may break some features that rely on the full payload
     componentIslands: true // Only hydrate interactive components, leaving static content as plain HTML for faster load times
   },
 
