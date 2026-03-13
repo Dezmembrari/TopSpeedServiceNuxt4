@@ -90,17 +90,17 @@ export default defineNuxtConfig({
   },
 
   features: {
-    inlineStyles: true
+    // inlineStyles: true
   },
 
   // Enable experimental payload extraction for faster hydration
   experimental: {
     // payloadExtraction: true, // Reduces JS execution time on true, but may cause issues with some dynamic content
     // renderJsonPayloads: true, // Speeds up hydration on true, but may break some features that rely on the full payload
-    // componentIslands: true // Only hydrate interactive components, leaving static content as plain HTML for faster load times
+    componentIslands: true // Only hydrate interactive components, leaving static content as plain HTML for faster load times
   },
 
-  compatibilityDate: '2025-01-15',
+  compatibilityDate: '2026-02-01',
 
   nitro: {
     prerender: {
