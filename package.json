@@ -1,5 +1,5 @@
 {
-  "name": "TopSpeedServiceNuxt4",
+  "name": "topspeedservicenuxt4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,8 +11,6 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@formkit/auto-animate": "0.9.0",
-    "@formkit/nuxt": "1.7.2",
     "@iconify-json/lucide": "^1.2.90",
     "@iconify-json/simple-icons": "^1.2.70",
     "@nuxt/content": "^3.11.2",

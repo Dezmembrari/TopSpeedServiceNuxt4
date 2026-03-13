@@ -19,16 +19,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        // Add preconnect to speed up font loading
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.googleapis.com'
-        },
-        {
-          rel: 'preconnect',
-          href: 'https://fonts.gstatic.com',
-          crossorigin: 'anonymous'
-        },
         // 1. Preload your Hero Image (The LCP Fix we discussed)
         {
           rel: 'preload',
@@ -163,7 +153,7 @@ export default defineNuxtConfig({
     defaults: {
       weights: [400, 700],
       styles: ['normal', 'italic'],
-      subsets: ['latin-ext', 'latin'],
+      subsets: ['latin'],
       preload: true
     }
 
