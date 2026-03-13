@@ -84,9 +84,9 @@ export default defineNuxtConfig({
     // Redirecționări 301 (Permanent Redirect) pentru SEO
     '/privacy': { redirect: { to: '/politica-de-confidentialitate', statusCode: 301 } },
     '/cookies': { redirect: { to: '/termeni-si-conditii', statusCode: 301 } },
-    '/despre_noi': { redirect: { to: '/#despre-noi', statusCode: 301 } },
-    '/servicii': { redirect: { to: '/#services', statusCode: 301 } },
-    '/contact': { redirect: { to: '/#contact', statusCode: 301 } }
+    '/despre_noi': { redirect: { to: '/', statusCode: 301 } },
+    '/servicii': { redirect: { to: '/', statusCode: 301 } },
+    '/contact': { redirect: { to: '/', statusCode: 301 } }
   },
 
   features: {
