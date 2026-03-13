@@ -152,8 +152,8 @@ export default defineNuxtConfig({
     // 2. Default options for font families
     defaults: {
       weights: [400, 700],
-      styles: ['normal'],
-      subsets: ['latin'],
+      styles: ['normal', 'italic'],
+      subsets: ['latin-ext', 'latin'],
       preload: true
     }
 
