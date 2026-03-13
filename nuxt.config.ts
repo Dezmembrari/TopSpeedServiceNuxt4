@@ -19,6 +19,16 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
+        // Add preconnect to speed up font loading
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.googleapis.com'
+        },
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com',
+          crossorigin: 'anonymous'
+        },
         // 1. Preload your Hero Image (The LCP Fix we discussed)
         {
           rel: 'preload',
@@ -90,7 +100,7 @@ export default defineNuxtConfig({
   },
 
   features: {
-    // inlineStyles: true
+    inlineStyles: true
   },
 
   // Enable experimental payload extraction for faster hydration
